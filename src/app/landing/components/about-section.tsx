@@ -9,25 +9,26 @@ import { Github, Code, Palette, Layout, Crown } from 'lucide-react'
 const values = [
   {
     icon: Code,
-    title: 'Developer First',
-    description: 'Every component is built with the developer experience in mind, ensuring clean code and easy integration.'
+    title: 'Education First',
+    description: 'Every feature is designed with educators and students in mind, ensuring the platform enhances the learning experience.'
   },
   {
     icon: Palette,
-    title: 'Design Excellence',
-    description: 'We maintain the highest design standards, following shadcn/ui principles and modern UI patterns.'
+    title: 'User-Friendly Design',
+    description: 'Intuitive interfaces that require minimal training, making it easy for teachers, staff, and parents to adopt.'
   },
   {
     icon: Layout,
-    title: 'Production Ready',
-    description: 'Battle-tested components used in real applications with proven performance and reliability across different environments.'
+    title: 'Reliable & Secure',
+    description: 'Enterprise-grade security and 99.9% uptime to ensure your school data is always safe and accessible.'
   },
   {
     icon: Crown,
-    title: 'Premium Quality',
-    description: 'Hand-crafted with attention to detail and performance optimization, ensuring exceptional user experience and accessibility.'
+    title: 'Continuous Innovation',
+    description: 'Regular updates and new features based on feedback from schools and educational institutions worldwide.'
   }
 ]
+
 
 export function AboutSection() {
   return (
@@ -39,11 +40,10 @@ export function AboutSection() {
             About Byte School
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
-            Built for developers, by developers
+            Built for schools, by educators
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            We're passionate about creating the best marketplace for shadcn/ui components and templates.
-            Our mission is to accelerate development and help developers build beautiful admin interfaces faster.
+            We're passionate about transforming education through technology. Our mission is to help schools eliminate paperwork, streamline operations, and focus on what matters most—providing quality education to students.
           </p>
         </div>
 

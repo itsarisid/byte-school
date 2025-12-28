@@ -12,30 +12,31 @@ import { DotPattern } from '@/components/elements/dot-pattern'
 
 const stats = [
   {
-    icon: Package,
+    icon: Users,
     value: '500+',
-    label: 'Components',
-    description: 'Ready-to-use blocks'
+    label: 'Schools',
+    description: 'Trust Byte School'
+  },
+  {
+    icon: Package,
+    value: '50K+',
+    label: 'Students',
+    description: 'Managed daily'
   },
   {
     icon: Download,
-    value: '25K+',
-    label: 'Downloads',
-    description: 'Trusted worldwide'
-  },
-  {
-    icon: Users,
-    value: '10K+',
-    label: 'Developers',
-    description: 'Active community'
+    value: '99.9%',
+    label: 'Uptime',
+    description: 'Reliable service'
   },
   {
     icon: Star,
-    value: '4.9',
+    value: '4.8',
     label: 'Rating',
-    description: 'User satisfaction'
+    description: 'Customer satisfaction'
   }
 ]
+
 
 export function StatsSection() {
   return (

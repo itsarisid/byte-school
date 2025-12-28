@@ -18,48 +18,49 @@ import { Image3D } from '@/components/elements/image-3d'
 const mainFeatures = [
   {
     icon: Package,
-    title: 'Curated Component Library',
-    description: 'Hand-picked blocks and templates for quality and reliability.'
+    title: 'Student Management',
+    description: 'Complete student profiles, enrollment, attendance tracking, and academic records in one centralized system.'
   },
   {
-    icon: Crown,
-    title: 'Free & Premium Options',
-    description: 'Start free, upgrade to premium collections when you need more.'
+    icon: Users,
+    title: 'Staff & Faculty Management',
+    description: 'Manage teacher schedules, assignments, payroll, and performance tracking effortlessly.'
   },
   {
     icon: Layout,
-    title: 'Ready-to-Use Templates',
-    description: 'Copy-paste components that just work out of the box.'
+    title: 'Digital Classrooms',
+    description: 'Online assignments, grade books, and communication tools for modern education.'
   },
   {
     icon: Zap,
-    title: 'Regular Updates',
-    description: 'New blocks and templates added weekly to keep you current.'
+    title: 'Automated Workflows',
+    description: 'Eliminate manual paperwork with automated admissions, fee collection, and report generation.'
   }
 ]
 
 const secondaryFeatures = [
   {
     icon: BarChart3,
-    title: 'Multiple Frameworks',
-    description: 'React, Next.js, and Vite compatibility for flexible development.'
+    title: 'Analytics & Reports',
+    description: 'Real-time insights into student performance, attendance trends, and institutional metrics.'
   },
   {
     icon: Palette,
-    title: 'Modern Tech Stack',
-    description: 'Built with shadcn/ui, Tailwind CSS, and TypeScript.'
-  },
-  {
-    icon: Users,
-    title: 'Responsive Design',
-    description: 'Mobile-first components for all screen sizes and devices.'
+    title: 'Parent Portal',
+    description: 'Keep parents informed with real-time updates on attendance, grades, and school activities.'
   },
   {
     icon: Database,
-    title: 'Developer-Friendly',
-    description: 'Clean code, well-documented, easy integration and customization.'
+    title: 'Secure Data Storage',
+    description: 'Cloud-based storage with enterprise-grade security for all your school records.'
+  },
+  {
+    icon: Crown,
+    title: 'Mobile Access',
+    description: 'Access your school management system anytime, anywhere from any device.'
   }
 ]
+
 
 export function FeaturesSection() {
   return (
@@ -67,12 +68,12 @@ export function FeaturesSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <Badge variant="outline" className="mb-4">Marketplace Features</Badge>
+          <Badge variant="outline" className="mb-4">Key Features</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            Everything you need to build amazing web applications
+            Everything your school needs in one platform
           </h2>
           <p className="text-lg text-muted-foreground">
-            Our marketplace provides curated blocks, templates, landing pages, and admin dashboards to help you build professional applications faster than ever.
+            Byte School provides a complete suite of tools to manage every aspect of your educational institution, from student enrollment to graduation.
           </p>
         </div>
 
@@ -89,10 +90,10 @@ export function FeaturesSection() {
           <div className="space-y-6">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
-                Components that accelerate development
+                Streamline school operations effortlessly
               </h3>
               <p className="text-muted-foreground text-base text-pretty">
-                Our curated marketplace offers premium blocks and templates designed to save time and ensure consistency across your admin projects.
+                From student admissions to daily attendance, manage all your school's core functions in one unified platform designed for educational excellence.
               </p>
             </div>
 
@@ -112,14 +113,14 @@ export function FeaturesSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 pe-4 pt-2">
               <Button size="lg" className="cursor-pointer">
-                <a href="https://shadcnstore.com/templates" className='flex items-center'>
-                  Browse Templates
+                <a href="#pricing" className='flex items-center'>
+                  View Pricing
                   <ArrowRight className="ms-2 size-4" aria-hidden="true" />
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="cursor-pointer">
-                <a href="https://shadcnstore.com/blocks">
-                  View Components
+                <a href="#contact">
+                  Request Demo
                 </a>
               </Button>
             </div>
@@ -132,10 +133,10 @@ export function FeaturesSection() {
           <div className="space-y-6 order-2 lg:order-1">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
-                Built for modern development workflows
+                Go paperless with confidence
               </h3>
               <p className="text-muted-foreground text-base text-pretty">
-                Every component follows best practices with TypeScript, responsive design, and clean code architecture that integrates seamlessly into your projects.
+                Eliminate manual paperwork and reduce administrative burden with automated processes, digital records, and real-time reporting capabilities.
               </p>
             </div>
 
@@ -155,14 +156,14 @@ export function FeaturesSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 pe-4 pt-2">
               <Button size="lg" className="cursor-pointer">
-                <a href="#" className='flex items-center'>
-                  View Documentation
+                <a href="#features" className='flex items-center'>
+                  Explore Features
                   <ArrowRight className="ms-2 size-4" aria-hidden="true" />
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="cursor-pointer">
-                <a href="https://github.com/silicondeck/shadcn-dashboard-landing-template" target="_blank" rel="noopener noreferrer">
-                  GitHub Repository
+                <a href="#contact">
+                  Contact Sales
                 </a>
               </Button>
             </div>
