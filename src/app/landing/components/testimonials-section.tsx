@@ -13,85 +13,86 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Alexandra Mitchell',
-    role: 'Senior Frontend Developer',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-1',
+    name: 'Dr. Sarah Johnson',
+    role: 'Principal, Green Valley High School',
+    image: 'https://ui-avatars.com/api/?name=Sarah+Johnson&size=120&background=6366F1&color=fff',
     quote:
-      'This platform has completely transformed our development workflow. The component system is so well-architected that even complex applications feel simple to build.',
+      'Byte School has revolutionized how we manage our institution. Going paperless has saved us countless hours and significantly reduced administrative costs.',
   },
   {
-    name: 'James Thompson',
-    role: 'Technical Lead',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-1',
-    quote: 'After trying countless frameworks, this is the one that finally clicked. The documentation is exceptional.',
+    name: 'Michael Chen',
+    role: 'School Administrator, Riverside Academy',
+    image: 'https://ui-avatars.com/api/?name=Michael+Chen&size=120&background=10B981&color=fff',
+    quote: 'The automated attendance and grade management features are game-changers. Parents love the real-time updates through the portal.',
   },
   {
     name: 'Priya Sharma',
-    role: 'Product Designer',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-2',
+    role: 'IT Director, Delhi International School',
+    image: 'https://ui-avatars.com/api/?name=Priya+Sharma&size=120&background=F59E0B&color=fff',
     quote:
-      'The design system is beautiful and consistent. I can prototype ideas quickly and hand them off to developers with confidence that the implementation will match perfectly.',
+      'Implementation was seamless, and the support team was exceptional. We migrated from paper-based systems in just two weeks.',
   },
   {
-    name: 'Robert Kim',
-    role: 'Engineering Manager',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-2',
+    name: 'Robert Williams',
+    role: 'Superintendent, Lincoln School District',
+    image: 'https://ui-avatars.com/api/?name=Robert+Williams&size=120&background=EF4444&color=fff',
     quote:
-      'We migrated our entire application to this platform in just two weeks. The performance improvements were immediate.',
+      'Managing multiple campuses has never been easier. The analytics dashboard gives us insights we never had before.',
   },
   {
     name: 'Maria Santos',
-    role: 'Full Stack Engineer',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-3',
+    role: 'Vice Principal, St. Mary\'s School',
+    image: 'https://ui-avatars.com/api/?name=Maria+Santos&size=120&background=8B5CF6&color=fff',
     quote:
-      'The accessibility features are top-notch. Building inclusive applications has never been easier. Every component follows best practices out of the box, and the automated testing suite ensures we maintain high accessibility standards throughout our development process.',
+      'The fee collection module has improved our cash flow significantly. Parents appreciate the convenience of online payments and automated reminders.',
   },
   {
-    name: 'Thomas Anderson',
-    role: 'Solutions Architect',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-3',
-    quote: 'Scalability was our biggest concern, but this platform handles enterprise-level complexity with ease.',
+    name: 'David Thompson',
+    role: 'Academic Coordinator, Oakwood School',
+    image: 'https://ui-avatars.com/api/?name=David+Thompson&size=120&background=EC4899&color=fff',
+    quote: 'Exam scheduling and result management are now completely automated. Teachers can focus more on teaching and less on paperwork.',
   },
   {
-    name: 'Lisa Chang',
-    role: 'UX Researcher',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-4',
+    name: 'Lisa Anderson',
+    role: 'Parent & PTA President',
+    image: 'https://ui-avatars.com/api/?name=Lisa+Anderson&size=120&background=14B8A6&color=fff',
     quote:
-      'User testing results have been consistently positive since we adopted this platform. The user experience is intuitive and the performance is stellar. Our user satisfaction scores have increased by 40% since the migration.',
+      'As a parent, I love being able to track my child\'s attendance, grades, and school activities in real-time. The mobile app is fantastic!',
   },
   {
-    name: 'Michael Foster',
-    role: 'DevOps Engineer',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-4',
-    quote: 'Deployment and maintenance are a breeze. The platform integrates seamlessly with our CI/CD pipeline.',
+    name: 'James Foster',
+    role: 'Teacher, Maple Leaf Elementary',
+    image: 'https://ui-avatars.com/api/?name=James+Foster&size=120&background=F97316&color=fff',
+    quote: 'Grade entry and report card generation used to take hours. Now it takes minutes. The system is intuitive and easy to use.',
   },
   {
     name: 'Sophie Laurent',
-    role: 'Creative Director',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-5',
+    role: 'Registrar, Cambridge Academy',
+    image: 'https://ui-avatars.com/api/?name=Sophie+Laurent&size=120&background=0EA5E9&color=fff',
     quote:
-      'The creative possibilities are endless. We can bring any design concept to life without compromising on technical quality or user experience.',
+      'Student enrollment and record management have become so much simpler. Everything is organized and accessible at our fingertips.',
   },
   {
-    name: 'Daniel Wilson',
-    role: 'Backend Developer',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-5',
-    quote: 'The API design is exceptional. Clean, intuitive, and well-documented.',
+    name: 'Ahmed Hassan',
+    role: 'Finance Manager, Al-Noor School',
+    image: 'https://ui-avatars.com/api/?name=Ahmed+Hassan&size=120&background=84CC16&color=fff',
+    quote: 'The financial reporting and fee tracking features are comprehensive. Reconciliation that used to take days now takes hours.',
   },
   {
-    name: 'Natasha Petrov',
-    role: 'Mobile App Developer',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-6',
+    name: 'Emily Rodriguez',
+    role: 'Librarian, Westside High School',
+    image: 'https://ui-avatars.com/api/?name=Emily+Rodriguez&size=120&background=A855F7&color=fff',
     quote:
-      'Cross-platform development has never been this efficient. One codebase, multiple platforms, consistent user experience. This is the future. The responsive design system ensures our apps look perfect on every device.',
+      'The library management module is excellent. Book tracking, issuing, and returns are all automated. Students can even search the catalog online.',
   },
   {
-    name: 'Carlos Rivera',
-    role: 'Startup Founder',
-    image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-6',
-    quote: 'As a non-technical founder, this platform gave me the confidence to build our MVP quickly.',
+    name: 'Dr. John Mitchell',
+    role: 'Dean, Heritage College',
+    image: 'https://ui-avatars.com/api/?name=John+Mitchell&size=120&background=06B6D4&color=fff',
+    quote: 'Byte School has helped us achieve our goal of becoming a completely paperless institution. The environmental impact alone is significant.',
   },
 ]
+
 
 export function TestimonialsSection() {
   return (
@@ -101,10 +102,10 @@ export function TestimonialsSection() {
         <div className="mx-auto max-w-2xl text-center mb-16">
           <Badge variant="outline" className="mb-4">Testimonials</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            Empowering Innovation Worldwide
+            Trusted by Schools Worldwide
           </h2>
           <p className="text-lg text-muted-foreground">
-            Join thousands of developers and teams who trust our platform to build exceptional digital experiences.
+            Join hundreds of educational institutions that have transformed their operations with Byte School.
           </p>
         </div>
 

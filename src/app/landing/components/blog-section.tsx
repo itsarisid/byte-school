@@ -5,31 +5,31 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
 const blogs = [
-    {
-      id: 1,
-      image: 'https://ui.shadcn.com/placeholder.svg',
-      category: 'Technology',
-      title: 'AI Development Catalysts',
-      description:
-        'Exploring how AI-driven tools are transforming software development workflows and accelerating innovation.',
-    },
-    {
-      id: 2,
-      image: 'https://ui.shadcn.com/placeholder.svg',
-      category: 'Lifestyle',
-      title: 'Minimalist Living Guide',
-      description:
-        'Minimalist living approaches that can help reduce stress and create more meaningful daily experiences.',
-    },
-    {
-      id: 3,
-      image: 'https://ui.shadcn.com/placeholder.svg',
-      category: 'Design',
-      title: 'Accessible UI Trends',
-      description:
-        'How modern UI trends are embracing accessibility while maintaining sleek, intuitive user experiences.',
-    },
-  ]
+  {
+    id: 1,
+    image: 'https://ui.shadcn.com/placeholder.svg',
+    category: 'Education Technology',
+    title: 'Going Paperless in Schools',
+    description:
+      'A comprehensive guide to transitioning your school from manual paperwork to a fully digital management system.',
+  },
+  {
+    id: 2,
+    image: 'https://ui.shadcn.com/placeholder.svg',
+    category: 'Best Practices',
+    title: 'Improving Parent Engagement',
+    description:
+      'How digital parent portals and real-time communication can strengthen the school-parent partnership.',
+  },
+  {
+    id: 3,
+    image: 'https://ui.shadcn.com/placeholder.svg',
+    category: 'Case Study',
+    title: 'Success Story: Digital Transformation',
+    description:
+      'How Green Valley High School reduced administrative costs by 60% after implementing Byte School.',
+  },
+]
 
 export function BlogSection() {
   return (
@@ -42,7 +42,7 @@ export function BlogSection() {
             From our blog
           </h2>
           <p className="text-lg text-muted-foreground">
-            Stay updated with the latest trends, best practices, and insights from our team of experts.
+            Stay updated with the latest trends in education technology, best practices, and success stories from schools using Byte School.
           </p>
         </div>
 

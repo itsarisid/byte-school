@@ -14,41 +14,42 @@ type FaqItem = {
 const faqItems: FaqItem[] = [
   {
     value: 'item-1',
-    question: 'How do I integrate Byte School components into my project?',
+    question: 'How long does it take to implement Byte School?',
     answer:
-      'Integration is simple! All our components are built with shadcn/ui and work with React, Next.js, and Vite. Just copy the component code, install any required dependencies, and paste it into your project. Each component comes with detailed installation instructions and examples.',
+      'Most schools complete the implementation within 2-4 weeks. This includes data migration, staff training, and system configuration. Our support team guides you through every step to ensure a smooth transition.',
   },
   {
     value: 'item-2',
-    question: 'What\'s the difference between free and premium components?',
+    question: 'Can we migrate our existing student data?',
     answer:
-      'Free components include essential UI elements like buttons, forms, and basic layouts. Premium components offer advanced features like complex data tables, analytics dashboards, authentication flows, and complete admin templates. Premium also includes Figma files, priority support, and commercial licenses.',
+      'Yes! We provide comprehensive data migration services. Our team will help you transfer all your existing student records, grades, attendance data, and other information from your current system or paper records into Byte School.',
   },
   {
     value: 'item-3',
-    question: 'Can I use these components in commercial projects?',
+    question: 'Is my school data secure?',
     answer:
-      'Yes! Free components come with an MIT license for unlimited use. Premium components include a commercial license that allows usage in client projects, SaaS applications, and commercial products without attribution requirements.',
+      'Absolutely. We use enterprise-grade security with encrypted data storage, regular backups, and comply with all major data protection regulations. Your school data is stored securely in the cloud with 99.9% uptime guarantee.',
   },
   {
     value: 'item-4',
-    question: 'Do you provide support and updates?',
+    question: 'Do you provide training for our staff?',
     answer:
-      'Absolutely! We provide community support for free components through our Discord server and GitHub issues. Premium subscribers get priority email support, regular component updates, and early access to new releases. We also maintain compatibility with the latest shadcn/ui versions.',
+      'Yes! All plans include comprehensive training materials and video tutorials. Professional and Enterprise plans include live training sessions for your staff. We also provide ongoing support to ensure everyone is comfortable using the system.',
   },
   {
     value: 'item-5',
-    question: 'What frameworks and tools do you support?',
+    question: 'Can parents access the system?',
     answer:
-      'Our components work with React 18+, Next.js 13+, and Vite. We use TypeScript, Tailwind CSS, and follow shadcn/ui conventions. Components are tested with popular tools like React Hook Form, TanStack Query, and Zustand for state management.',
+      'Yes! Parents get their own portal where they can view their child\'s attendance, grades, assignments, fee status, and school announcements in real-time. They can also communicate with teachers and receive automated notifications.',
   },
   {
     value: 'item-6',
-    question: 'How often do you release new components?',
+    question: 'What happens if we need to cancel?',
     answer:
-      'We release new components and templates weekly. Premium subscribers get early access to new releases, while free components are updated regularly based on community feedback. You can track our roadmap and request specific components through our GitHub repository.',
+      'You can cancel your subscription at any time with no penalties. We offer a 14-day free trial so you can test the system risk-free. If you cancel, you\'ll have access to export all your data before your subscription ends.',
   },
 ]
+
 
 const FaqSection = () => {
   return (
