@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react'
-import { Menu, Github, LayoutDashboard, ChevronDown, X, Moon, Sun } from 'lucide-react'
+import { Menu, Github, ChevronDown, X, Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
@@ -132,7 +132,7 @@ export function LandingNavbar() {
             </a>
           </Button>
           <Button variant="ghost" asChild className="cursor-pointer">
-            <a href={getAppUrl("/auth/sign-in")}>Sign In</a>
+            <a href={getAppUrl("/login")}>Sign In</a>
           </Button>
         </div>
 
@@ -241,7 +241,7 @@ export function LandingNavbar() {
                 <div className="space-y-3">
                   <div className="grid grid-cols-2 gap-3">
                     <Button variant="outline" size="lg" asChild className="cursor-pointer">
-                      <a href={getAppUrl("/auth/login")}>Sign In</a>
+                      <a href={getAppUrl("/login")}>Sign In</a>
                     </Button>
                   </div>
                 </div>
