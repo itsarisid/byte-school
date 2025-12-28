@@ -1,0 +1,2 @@
+// Re-export the main components from the modular structure
+export { ThemeCustomizer, ThemeCustomizerTrigger } from '@/components/theme-customizer/main'
