@@ -1,9 +1,9 @@
-import type { 
-  SidebarVariant, 
-  SidebarCollapsibleOption, 
-  SidebarSideOption, 
-  RadiusOption, 
-  BrandColor 
+import type {
+  SidebarVariant,
+  SidebarCollapsibleOption,
+  SidebarSideOption,
+  RadiusOption,
+  BrandColor
 } from '@/types/theme-customizer'
 
 // Radius options
@@ -45,4 +45,22 @@ export const baseColors: BrandColor[] = [
   { name: "Accent Foreground", cssVar: "--accent-foreground" },
   { name: "Muted", cssVar: "--muted" },
   { name: "Muted Foreground", cssVar: "--muted-foreground" },
+]
+
+// Application settings constants
+export const dateFormats = [
+  { name: "MM/DD/YYYY", value: "MM/DD/YYYY" },
+  { name: "DD/MM/YYYY", value: "DD/MM/YYYY" },
+  { name: "YYYY-MM-DD", value: "YYYY-MM-DD" },
+]
+
+export const timeFormats = [
+  { name: "12-hour (AM/PM)", value: "12h" },
+  { name: "24-hour", value: "24h" },
+]
+
+export const fontFamilies = [
+  { name: "Sans Serif", value: "sans", description: "Modern and clean (Default)" },
+  { name: "Serif", value: "serif", description: "Classic and readable" },
+  { name: "Monospace", value: "mono", description: "Technical and precise" },
 ]

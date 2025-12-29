@@ -43,3 +43,10 @@ export interface ImportedTheme {
   light: Record<string, string>
   dark: Record<string, string>
 }
+
+export interface AppConfig {
+  dateFormat: string
+  timeFormat: "12h" | "24h"
+  fontFamily: "sans" | "serif" | "mono"
+  language: string
+}

@@ -11,12 +11,14 @@ import { useThemeManager } from '@/hooks/use-theme-manager'
 import { useSidebarConfig } from '@/contexts/sidebar-context'
 import { ThemeTab } from '@/components/theme-customizer/theme-tab'
 import { LayoutTab } from '@/components/theme-customizer/layout-tab'
+import { AppTab } from '@/components/theme-customizer/app-tab'
 import { ImportModal } from '@/components/theme-customizer/import-modal'
 import {
     selectedThemeAtom,
     selectedMyThemeAtom,
     selectedRadiusAtom,
-    importedThemeAtom
+    importedThemeAtom,
+    appConfigAtom
 } from '@/store/theme-store'
 import type { ImportedTheme } from '@/types/theme-customizer'
 
@@ -30,6 +32,7 @@ export default function SettingsPage() {
     const [selectedRadius, setSelectedRadius] = useAtom(selectedRadiusAtom)
     const [importModalOpen, setImportModalOpen] = React.useState(false)
     const [, setImportedTheme] = useAtom(importedThemeAtom)
+    const [, setAppConfig] = useAtom(appConfigAtom)
 
     const handleReset = () => {
         // 1. Reset all state variables to initial values
@@ -47,6 +50,14 @@ export default function SettingsPage() {
 
         // 4. Reset sidebar to defaults
         updateSidebarConfig({ variant: "inset", collapsible: "offcanvas", side: "left", isHeaderSticky: true, showFooter: true })
+
+        // 5. Reset app settings
+        setAppConfig({
+            dateFormat: "MM/DD/YYYY",
+            timeFormat: "12h",
+            fontFamily: "sans",
+            language: "en"
+        })
     }
 
     const handleImport = (themeData: ImportedTheme) => {
@@ -77,7 +88,7 @@ export default function SettingsPage() {
                     </CardHeader>
                     <CardContent>
                         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
-                            <TabsList className="grid w-full grid-cols-2 max-w-[400px]">
+                            <TabsList className="grid w-full grid-cols-3 max-w-[500px]">
                                 <TabsTrigger value="theme" className="cursor-pointer">
                                     <Palette className="h-4 w-4 mr-2" />
                                     Theme
@@ -85,6 +96,10 @@ export default function SettingsPage() {
                                 <TabsTrigger value="layout" className="cursor-pointer">
                                     <Layout className="h-4 w-4 mr-2" />
                                     Layout
+                                </TabsTrigger>
+                                <TabsTrigger value="application" className="cursor-pointer">
+                                    <Settings className="h-4 w-4 mr-2" />
+                                    Application
                                 </TabsTrigger>
                             </TabsList>
 
@@ -107,6 +122,12 @@ export default function SettingsPage() {
                                 <TabsContent value="layout" className="mt-0">
                                     <div className="max-w-2xl">
                                         <LayoutTab />
+                                    </div>
+                                </TabsContent>
+
+                                <TabsContent value="application" className="mt-0">
+                                    <div className="max-w-2xl">
+                                        <AppTab />
                                     </div>
                                 </TabsContent>
                             </div>
