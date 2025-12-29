@@ -60,7 +60,16 @@ export const timeFormats = [
 ]
 
 export const fontFamilies = [
-  { name: "Sans Serif", value: "sans", description: "Modern and clean (Default)" },
-  { name: "Serif", value: "serif", description: "Classic and readable" },
-  { name: "Monospace", value: "mono", description: "Technical and precise" },
+  { name: "Inter", value: "inter", description: "Modern and clean (Default Sans)" },
+  { name: "Outfit", value: "outfit", description: "Minimalist and geometric" },
+  { name: "Roboto Slab", value: "roboto", description: "Classic and readable serif" },
+  { name: "Playfair Display", value: "playfair", description: "Elegant and artistic" },
+  { name: "JetBrains Mono", value: "jetbrains", description: "Technical and precise" },
+  { name: "Space Mono", value: "space", description: "Retro and quirky" },
+]
+
+export const weekStartOptions = [
+  { name: "Sunday", value: "sunday" },
+  { name: "Monday", value: "monday" },
+  { name: "Saturday", value: "saturday" },
 ]

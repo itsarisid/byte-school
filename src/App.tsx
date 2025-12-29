@@ -19,14 +19,7 @@ function App() {
   }, []);
 
   const getFontFamily = () => {
-    switch (appConfig.fontFamily) {
-      case 'serif':
-        return 'var(--font-serif)'
-      case 'mono':
-        return 'var(--font-mono)'
-      default:
-        return 'var(--font-sans)'
-    }
+    return `var(--font-${appConfig.fontFamily}, var(--font-inter))`
   }
 
   return (

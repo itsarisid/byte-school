@@ -47,6 +47,7 @@ export interface ImportedTheme {
 export interface AppConfig {
   dateFormat: string
   timeFormat: "12h" | "24h"
-  fontFamily: "sans" | "serif" | "mono"
+  fontFamily: string
+  weekStart: "sunday" | "monday" | "saturday"
   language: string
 }

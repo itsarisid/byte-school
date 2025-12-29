@@ -55,7 +55,8 @@ export default function SettingsPage() {
         setAppConfig({
             dateFormat: "MM/DD/YYYY",
             timeFormat: "12h",
-            fontFamily: "sans",
+            fontFamily: "inter",
+            weekStart: "sunday",
             language: "en"
         })
     }

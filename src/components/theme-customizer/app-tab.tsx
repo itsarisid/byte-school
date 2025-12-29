@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { appConfigAtom } from '@/store/theme-store'
-import { dateFormats, timeFormats, fontFamilies } from '@/config/theme-customizer-constants'
+import { dateFormats, timeFormats, fontFamilies, weekStartOptions } from '@/config/theme-customizer-constants'
 
 export function AppTab() {
     const [config, setConfig] = useAtom(appConfigAtom)
@@ -70,17 +70,45 @@ export function AppTab() {
                 </RadioGroup>
             </div>
 
+            {/* Week Start Date */}
+            <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4 text-muted-foreground" />
+                    <Label className="text-base font-semibold">Week Starts On</Label>
+                </div>
+                <div className="grid gap-2">
+                    <Select
+                        value={config.weekStart}
+                        onValueChange={(value: any) => setConfig({ ...config, weekStart: value })}
+                    >
+                        <SelectTrigger className="w-full max-w-sm">
+                            <SelectValue placeholder="Select week start day" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            {weekStartOptions.map((option) => (
+                                <SelectItem key={option.value} value={option.value}>
+                                    {option.name}
+                                </SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
+                    <p className="text-xs text-muted-foreground">
+                        Set the first day of the week for calendars and analytics.
+                    </p>
+                </div>
+            </div>
+
             {/* Font Family */}
             <div className="space-y-4">
                 <div className="flex items-center gap-2">
                     <Type className="h-4 w-4 text-muted-foreground" />
                     <Label className="text-base font-semibold">Font Family</Label>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {fontFamilies.map((font) => (
                         <button
                             key={font.value}
-                            onClick={() => setConfig({ ...config, fontFamily: font.value as any })}
+                            onClick={() => setConfig({ ...config, fontFamily: font.value })}
                             className={cn(
                                 "flex flex-col items-start gap-2 p-3 rounded-lg border text-left transition-all hover:bg-accent",
                                 config.fontFamily === font.value
@@ -89,12 +117,7 @@ export function AppTab() {
                             )}
                         >
                             <div className="flex items-center justify-between w-full">
-                                <span className={cn(
-                                    "font-medium",
-                                    font.value === "sans" && "font-sans",
-                                    font.value === "serif" && "font-serif",
-                                    font.value === "mono" && "font-mono"
-                                )}>
+                                <span className="font-medium" style={{ fontFamily: `var(--font-${font.value}, sans-serif)` }}>
                                     {font.name}
                                 </span>
                                 {config.fontFamily === font.value && (

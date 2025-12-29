@@ -22,10 +22,10 @@ export const brandColorsAtom = atomWithStorage<Record<string, string>>('brand-co
 // Imported theme data atom
 export const importedThemeAtom = atomWithStorage<ImportedTheme | null>('imported-theme', null)
 
-// Application settings atom
 export const appConfigAtom = atomWithStorage<AppConfig>('app-config', {
     dateFormat: "MM/DD/YYYY",
     timeFormat: "12h",
-    fontFamily: "sans",
+    fontFamily: "inter",
+    weekStart: "sunday",
     language: "en"
 })
