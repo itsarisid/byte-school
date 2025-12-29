@@ -2,23 +2,16 @@
 
 import * as React from "react"
 import {
-  LayoutPanelLeft,
   LayoutDashboard,
   Mail,
   CheckSquare,
   MessageCircle,
   Calendar,
-  Shield,
   AlertTriangle,
-  Settings,
-  HelpCircle,
-  CreditCard,
-  LayoutTemplate,
   Users,
 } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Logo } from "@/components/elements/logo"
-import { SidebarNotification } from "@/components/elements/sidebar-notification"
 
 import { NavMain } from "@/components/elements/nav-main"
 import { NavUser } from "@/components/elements/nav-user"
@@ -43,7 +36,7 @@ const data = {
       label: "Dashboards",
       items: [
         {
-          title: "Dashboard 1",
+          title: "Dashboard",
           url: "/dashboard",
           icon: LayoutDashboard,
         },
@@ -89,23 +82,23 @@ const data = {
           items: [
             {
               title: "Unauthorized",
-              url: "/errors/unauthorized",
+              url: "/unauthorized",
             },
             {
               title: "Forbidden",
-              url: "/errors/forbidden",
+              url: "/forbidden",
             },
             {
               title: "Not Found",
-              url: "/errors/not-found",
+              url: "/not-found",
             },
             {
               title: "Internal Server Error",
-              url: "/errors/internal-server-error",
+              url: "/internal-server-error",
             },
             {
               title: "Under Maintenance",
-              url: "/errors/under-maintenance",
+              url: "/under-maintenance",
             },
           ],
         },

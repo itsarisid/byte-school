@@ -8,7 +8,6 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useThemeManager } from '@/hooks/use-theme-manager'
 import { useSidebarConfig } from '@/contexts/sidebar-context'
-import { myThemes } from '@/config/theme-data'
 import { ThemeTab } from './theme-tab'
 import { LayoutTab } from './layout-tab'
 import { ImportModal } from './import-modal'
@@ -27,7 +26,7 @@ interface ThemeCustomizerProps {
 }
 
 export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
-  const { applyImportedTheme, isDarkMode, resetTheme, applyRadius, setBrandColorsValues, applyTheme, applyMyTheme } = useThemeManager()
+  const { applyImportedTheme, isDarkMode, resetTheme, applyRadius, setBrandColorsValues } = useThemeManager()
   const { config: sidebarConfig, updateConfig: updateSidebarConfig } = useSidebarConfig()
 
   const [activeTab, setActiveTab] = React.useState("theme")
@@ -35,7 +34,7 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
   const [selectedMyTheme, setSelectedMyTheme] = useAtom(selectedMyThemeAtom)
   const [selectedRadius, setSelectedRadius] = useAtom(selectedRadiusAtom)
   const [importModalOpen, setImportModalOpen] = React.useState(false)
-  const [importedTheme, setImportedTheme] = useAtom(importedThemeAtom)
+  const [, setImportedTheme] = useAtom(importedThemeAtom)
 
   const handleReset = () => {
     // Complete reset to application defaults
@@ -71,19 +70,6 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
     setImportModalOpen(true)
   }
 
-  // Re-apply themes when theme mode changes
-  React.useEffect(() => {
-    if (importedTheme) {
-      applyImportedTheme(importedTheme, isDarkMode)
-    } else if (selectedTheme) {
-      applyTheme(selectedTheme, isDarkMode)
-    } else if (selectedMyTheme) {
-      const selectedPreset = myThemes.find(t => t.value === selectedMyTheme)?.preset
-      if (selectedPreset) {
-        applyMyTheme(selectedPreset, isDarkMode)
-      }
-    }
-  }, [isDarkMode, importedTheme, selectedTheme, selectedMyTheme, applyImportedTheme, applyTheme, applyMyTheme])
 
   return (
     <>

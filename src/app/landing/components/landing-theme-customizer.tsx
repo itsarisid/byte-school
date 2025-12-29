@@ -31,7 +31,7 @@ export function LandingThemeCustomizer({ open, onOpenChange }: LandingThemeCusto
     applyRadius,
     setBrandColorsValues,
     applyTheme,
-    applyTweakcnTheme,
+    applyMyTheme,
     brandColorsValues,
     handleColorChange
   } = useThemeManager()
@@ -88,7 +88,7 @@ export function LandingThemeCustomizer({ open, onOpenChange }: LandingThemeCusto
     setSelectedTheme("")
     setBrandColorsValues({})
     setImportedTheme(null)
-    applyTweakcnTheme(randomTheme.preset, isDarkMode)
+    applyMyTheme(randomTheme.preset, isDarkMode)
   }
 
   const handleRadiusSelect = (radius: string) => {
@@ -115,10 +115,10 @@ export function LandingThemeCustomizer({ open, onOpenChange }: LandingThemeCusto
     } else if (selectedTweakcnTheme) {
       const selectedPreset = myThemes.find(t => t.value === selectedTweakcnTheme)?.preset
       if (selectedPreset) {
-        applyTweakcnTheme(selectedPreset, isDarkMode)
+        applyMyTheme(selectedPreset, isDarkMode)
       }
     }
-  }, [isDarkMode, importedTheme, selectedTheme, selectedTweakcnTheme, applyImportedTheme, applyTheme, applyTweakcnTheme])
+  }, [isDarkMode, importedTheme, selectedTheme, selectedTweakcnTheme, applyImportedTheme, applyTheme, applyMyTheme])
 
   return (
     <>
@@ -252,7 +252,7 @@ export function LandingThemeCustomizer({ open, onOpenChange }: LandingThemeCusto
                 setImportedTheme(null)
                 const selectedPreset = myThemes.find(t => t.value === value)?.preset
                 if (selectedPreset) {
-                  applyTweakcnTheme(selectedPreset, isDarkMode)
+                  applyMyTheme(selectedPreset, isDarkMode)
                 }
               }}>
                 <SelectTrigger className="w-full cursor-pointer">
@@ -348,34 +348,6 @@ export function LandingThemeCustomizer({ open, onOpenChange }: LandingThemeCusto
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-
-            {/* Tweakcn */}
-            <div className="p-4 bg-muted rounded-lg space-y-3">
-              <div className="flex items-center gap-2">
-                <Palette className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium">Advanced Customization</span>
-              </div>
-              <p className="text-xs text-muted-foreground">
-                For advanced theme customization with real-time preview, visual color picker, and hundreds of prebuilt themes, visit{" "}
-                <a
-                  href="https://tweakcn.com/editor/theme"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline font-medium cursor-pointer"
-                >
-                  tweakcn.com
-                </a>
-              </p>
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full cursor-pointer"
-                onClick={() => window.open('https://tweakcn.com/editor/theme', '_blank')}
-              >
-                <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
-                Open Tweakcn
-              </Button>
-            </div>
           </div>
         </SheetContent>
       </Sheet>
