@@ -67,18 +67,18 @@ export function AboutSection() {
         {/* Call to Action */}
         <div className="mt-16 text-center">
           <div className="flex items-center justify-center gap-2 mb-6">
-            <span className="text-muted-foreground">❤️ Made with love for the developer community</span>
+            <span className="text-muted-foreground">❤️ Made with love for the education community</span>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="cursor-pointer" asChild>
-              <a href="https://github.com/silicondeck/shadcn-dashboard-landing-template" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/itsarisid/byte-school" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
                 Star on GitHub
               </a>
             </Button>
             <Button size="lg" variant="outline" className="cursor-pointer" asChild>
-              <a href="https://discord.com/invite/XEQhPc9a6p" target="_blank" rel="noopener noreferrer">
-                Join Discord Community
+              <a href="https://x.com/itsarisid" target="_blank" rel="noopener noreferrer">
+                Follow on X
               </a>
             </Button>
           </div>
