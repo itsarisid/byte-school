@@ -16,12 +16,15 @@ export function SiteFooter() {
               rel="noopener noreferrer"
               className="font-medium text-foreground hover:text-primary transition-colors"
             >
-              ByteClass Team
+              Byte School Team
             </Link>
           </div>
           <p className="text-xs text-muted-foreground">
-            Building beautiful, accessible blocks, templates and dashboards for modern web applications.
+            © {new Date().getFullYear()} Byte School Team. All rights reserved.
           </p>
+          <div className="text-[10px] text-muted-foreground/60">
+            Last updated: {new Date().toLocaleString()}
+          </div>
         </div>
       </div>
     </footer>

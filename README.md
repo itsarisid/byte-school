@@ -1,158 +1,99 @@
-# Byte School - School Management System
+# Byte School - Modern School Management System
 
 ![Byte School Logo](public/logo.png)
 
-A comprehensive school management software that helps educational institutions automate their manual paperwork, streamline operations, and embrace a paperless future.
+Byte School is a comprehensive, enterprise-grade school management software designed to help educational institutions automate manual paperwork, streamline administrative operations, and fully embrace a paperless future.
 
-## 🎯 Overview
+## 🎯 Project Vision
 
-Byte School is a modern, cloud-based school management system designed to digitize and automate all aspects of school administration. From student enrollment to graduation, manage everything in one unified platform.
+Our goal is to provide schools with a unified platform that manages the entire student lifecycle—from initial enrollment to graduation—while offering real-time insights and seamless communication tools for staff, parents, and students.
 
 ## ✨ Key Features
 
-### 📚 Student Management
-- Complete student profiles with photos and documents
-- Enrollment and admission management
-- Academic records and transcripts
-- Attendance tracking with automated notifications
-- Student performance analytics
+### 🎨 Advanced Theme Customizer
+- **Real-time Customization**: Change themes, colors, and border radius with instant preview.
+- **Persistence**: Your layout and theme settings are saved to local storage via Jotai.
+- **Sticky Header**: Optional sticky header configuration for better navigation.
+- **Brand Colors**: Full control over specific brand color variables.
 
-### 👨‍🏫 Staff & Faculty Management
-- Teacher profiles and credentials
-- Schedule and timetable management
-- Payroll and salary management
-- Performance tracking and evaluations
-- Leave management system
+### 📚 Institutional Management
+- **Student Information System**: Comprehensive profiles, academic records, and attendance tracking.
+- **Faculty Management**: Timetable scheduling, payroll, and performance evaluations.
+- **Academic Suite**: Grade book management, exam scheduling, and curriculum planning.
+- **Financial Module**: Automated fee collection, expense tracking, and financial analytics.
 
-### 📊 Academic Management
-- Grade book and report cards
-- Exam scheduling and management
-- Assignment tracking
-- Curriculum planning
-- Progress reports
-
-### 💰 Financial Management
-- Automated fee collection
-- Online payment integration
-- Fee reminders and notifications
-- Financial reports and analytics
-- Expense tracking
-
-### 👪 Parent Portal
-- Real-time attendance updates
-- Grade and assignment tracking
-- Fee payment and history
-- School announcements
-- Direct messaging with teachers
-
-### 📱 Mobile Access
-- iOS and Android apps
-- Responsive web interface
-- Access from anywhere, anytime
-- Offline mode support
-
-### 🔒 Security & Compliance
-- Enterprise-grade encryption
-- Role-based access control
-- Regular automated backups
-- GDPR and data protection compliance
-- 99.9% uptime guarantee
+### 📱 Modern User Experience
+- **Responsive Dashboard**: Optimized for desktop, tablet, and mobile devices.
+- **Parent Portal**: Direct messaging, real-time attendance updates, and fee payments.
+- **Interactive UI**: Built with Radix UI primitives for high accessibility.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
-- Modern web browser
+- **Node.js**: 18.0 or higher
+- **Package Manager**: npm or yarn
+- **Browser**: Modern evergreen browser (Chrome, Firefox, Safari, Edge)
 
 ### Installation
 
-1. Clone the repository
-```bash
-git clone https://github.com/itsarisid/byte-school.git
-cd byte-school
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/itsarisid/byte-school.git
+   cd byte-school
+   ```
 
-2. Install dependencies
-```bash
-npm install
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-3. Set up environment variables
-```bash
-cp .env.example .env
-```
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-4. Start the development server
-```bash
-npm run dev
-```
-
-5. Open your browser and navigate to `http://localhost:5173`
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18 + TypeScript
-- **Build Tool**: Vite
-- **UI Components**: shadcn/ui
-- **Styling**: Tailwind CSS
-- **Routing**: React Router
-- **State Management**: React Context
-- **Form Handling**: React Hook Form
-- **Validation**: Zod
+- **Core**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **State Management**: [Jotai](https://jotai.org/) (Atomic state with persistence)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/) (Radix UI)
+- **Routing**: [React Router 7](https://reactrouter.com/)
+- **Interactions**: [@dnd-kit](https://dndkit.com/) (Drag & Drop functionality)
+- **Build Tool**: [Vite](https://vitejs.dev/)
 
 ## 📦 Project Structure
 
-```
+```bash
 byte-school/
-├── public/              # Static assets
 ├── src/
-│   ├── app/            # Application pages
-│   │   ├── auth/       # Authentication pages
-│   │   └── landing/    # Landing page components
-│   ├── components/     # Reusable components
-│   │   ├── elements/   # UI elements
-│   │   └── ui/         # shadcn/ui components
-│   ├── config/         # Configuration files
-│   ├── contexts/       # React contexts
-│   ├── hooks/          # Custom hooks
-│   ├── lib/            # Utility functions
-│   └── router/         # Routing configuration
-├── .env.example        # Environment variables template
-└── package.json        # Dependencies
+│   ├── app/            # Application pages and route-specific logic
+│   │   ├── auth/       # Authentication pages (Login, Register, etc.)
+│   │   ├── dashboard/  # Dashboard pages (Home, Settings, etc.)
+│   │   ├── errors/     # Error pages (404, 500, etc.)
+│   │   ├── layout/     # Layout pages (Sidebar, Header, etc.)
+│   │   ├── landing/    # Landing pages (Home, Settings, etc.)
+│   │   ├── not-found/  # Not found pages (404, 500, etc.)
+│   │   ├── profile/    # Profile pages (Profile, Settings, etc.)
+│   │   ├── settings/   # Settings pages (Settings, etc.)
+│   │   ├── users/      # Users pages (Users, etc.)
+│   ├── components/     # Reusable UI components
+│   │   ├── elements/   # Core design elements (Header, Sidebar, etc.)
+│   │   └── ui/         # Base shadcn/ui primitives
+│   ├── config/         # System constants and theme data
+│   ├── contexts/       # React Context providers (Sidebar, etc.)
+│   ├── hooks/          # Custom Reusable Hooks (Theme Management)
+│   ├── store/          # Jotai Atoms for global state
+│   ├── utils/          # Helper functions and theme presets
+│   └── main.tsx        # Application entry point
+└── package.json        # Build scripts and dependencies
 ```
-
-## 🎨 Features in Detail
-
-### Paperless Operations
-- Digital document management
-- Electronic signatures
-- Online forms and applications
-- Automated report generation
-- Cloud storage integration
-
-### Communication Tools
-- SMS and email notifications
-- In-app messaging
-- Announcement system
-- Parent-teacher communication
-- Emergency alerts
-
-### Analytics & Reporting
-- Student performance analytics
-- Attendance trends
-- Financial reports
-- Custom report builder
-- Data export capabilities
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Team
 
@@ -160,43 +101,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Umair Malik** - Chief Technology Officer
 - **Imtiyaz Pasha** - Head of Product
 
-## 📞 Support
-
-- **Email**: support@byteschool.com
-- **Documentation**: [docs.byteschool.com](https://docs.byteschool.com)
-- **GitHub Issues**: [Report a bug](https://github.com/itsarisid/byte-school/issues)
-
-## 🌟 Testimonials
-
-> "Byte School has revolutionized how we manage our institution. Going paperless has saved us countless hours and significantly reduced administrative costs."
-> 
-> — Dr. Sarah Johnson, Principal, Green Valley High School
-
-> "The automated attendance and grade management features are game-changers. Parents love the real-time updates through the portal."
-> 
-> — Michael Chen, School Administrator, Riverside Academy
-
-## 📈 Stats
-
-- 🏫 **500+** Schools using Byte School
-- 👨‍🎓 **50,000+** Students managed daily
-- ⏱️ **99.9%** Uptime
-- ⭐ **4.8/5** Customer satisfaction rating
-
-## 🗺️ Roadmap
-
-- [ ] AI-powered student performance predictions
-- [ ] Integration with popular LMS platforms
-- [ ] Advanced analytics dashboard
-- [ ] Multi-language support
-- [ ] Biometric attendance integration
-
 ## 🙏 Acknowledgments
 
-- Built with [shadcn/ui](https://ui.shadcn.com/)
-- Icons from [Lucide](https://lucide.dev/)
-- Inspired by modern educational institutions worldwide
+- [shadcn/ui](https://ui.shadcn.com/) for the incredible component library.
+- [Lucide](https://lucide.dev/) for the beautiful iconography.
+- [Jotai](https://jotai.org/) for the elegant state management.
 
 ---
 
-Made with ❤️ by the Byte School Team
+Made with ❤️ by the **Byte School Team**
