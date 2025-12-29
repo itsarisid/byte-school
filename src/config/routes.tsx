@@ -3,11 +3,11 @@ import { Navigate } from 'react-router-dom'
 
 // Lazy load components for better performance
 const Landing = lazy(() => import('@/app/landing'))
+
 // Auth pages
 const SignIn = lazy(() => import('@/app/auth/login'))
 const SignUp = lazy(() => import('@/app/auth/register'))
 const ForgotPassword = lazy(() => import('@/app/auth/forgot-password'))
-
 
 // Error pages
 const Unauthorized = lazy(() => import('@/app/errors/unauthorized'))
@@ -16,6 +16,9 @@ const NotFound = lazy(() => import('@/app/errors/not-found'))
 const InternalServerError = lazy(() => import('@/app/errors/internal-server-error'))
 const UnderMaintenance = lazy(() => import('@/app/errors/under-maintenance'))
 const PublicNotFound = lazy(() => import('@/app/public-404'))
+
+// Authenticated pages
+const Dashboard = lazy(() => import('@/app/dashboard'))
 
 
 export interface RouteConfig {
@@ -26,7 +29,7 @@ export interface RouteConfig {
 
 export const routes: RouteConfig[] = [
   // Default route - redirect to Landing Page
-  // Use relative path "dashboard" instead of "/dashboard" for basename compatibility
+
   // Landing Page
   {
     path: "/landing",
@@ -75,5 +78,11 @@ export const routes: RouteConfig[] = [
   {
     path: "/public-404",
     element: <PublicNotFound />
+  },
+
+  // Authenticated Routes
+  {
+    path: "/dashboard",
+    element: <Dashboard />
   },
 ]

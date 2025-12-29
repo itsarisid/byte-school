@@ -26,34 +26,34 @@ export function useThemeManager() {
       'primary', 'primary-foreground', 'secondary', 'secondary-foreground', 'muted', 'muted-foreground',
       'accent', 'accent-foreground', 'destructive', 'destructive-foreground', 'border', 'input',
       'ring', 'radius',
-      
+
       // Chart variables
       'chart-1', 'chart-2', 'chart-3', 'chart-4', 'chart-5',
-      
+
       // Sidebar variables
-      'sidebar', 'sidebar-background', 'sidebar-foreground', 'sidebar-primary', 'sidebar-primary-foreground', 
+      'sidebar', 'sidebar-background', 'sidebar-foreground', 'sidebar-primary', 'sidebar-primary-foreground',
       'sidebar-accent', 'sidebar-accent-foreground', 'sidebar-border', 'sidebar-ring',
-      
+
       // Font variables that might be in imported themes
       'font-sans', 'font-serif', 'font-mono',
-      
+
       // Shadow variables from imported themes
       'shadow-2xs', 'shadow-xs', 'shadow-sm', 'shadow', 'shadow-md', 'shadow-lg', 'shadow-xl', 'shadow-2xl',
-      
+
       // Spacing variables
       'spacing', 'tracking-normal',
-      
+
       // Additional variables that might be set by advanced themes
       'card-header', 'card-content', 'card-footer', 'muted-background', 'accent-background',
       'destructive-background', 'warning', 'warning-foreground', 'success', 'success-foreground',
       'info', 'info-foreground'
     ]
-    
+
     // Remove all possible CSS variables
     allPossibleVars.forEach(varName => {
       root.style.removeProperty(`--${varName}`)
     })
-    
+
     // Also remove any inline styles that might have been set (comprehensive cleanup)
     const inlineStyles = root.style
     for (let i = inlineStyles.length - 1; i >= 0; i--) {
@@ -92,7 +92,7 @@ export function useThemeManager() {
     updateBrandColorsFromTheme(styles)
   }, [resetTheme, updateBrandColorsFromTheme])
 
-  const applyTweakcnTheme = React.useCallback((themePreset: ThemePreset, darkMode: boolean) => {
+  const applyMyTheme = React.useCallback((themePreset: ThemePreset, darkMode: boolean) => {
     // Reset and apply theme variables
     resetTheme()
     const styles = darkMode ? themePreset.styles.dark : themePreset.styles.light
@@ -109,12 +109,12 @@ export function useThemeManager() {
   const applyImportedTheme = React.useCallback((themeData: ImportedTheme, darkMode: boolean) => {
     const root = document.documentElement
     const themeVars = darkMode ? themeData.dark : themeData.light
-    
+
     // Apply all variables from the theme
     Object.entries(themeVars).forEach(([variable, value]) => {
       root.style.setProperty(`--${variable}`, value)
     })
-    
+
     // Update brand colors values for the customizer UI
     const newBrandColors: Record<string, string> = {}
     baseColors.forEach(color => {
@@ -142,7 +142,7 @@ export function useThemeManager() {
     setBrandColorsValues,
     resetTheme,
     applyTheme,
-    applyTweakcnTheme,
+    applyMyTheme,
     applyImportedTheme,
     applyRadius,
     handleColorChange,

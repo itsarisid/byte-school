@@ -2,7 +2,7 @@ import { shadcnThemePresets } from '@/utils/shadcn-ui-theme-presets'
 import { myPresets } from '@/utils/my-theme-presets'
 import type { ColorTheme } from '@/types/theme-customizer'
 
-// Tweakcn theme presets for the dropdown - convert from tweakcnPresets
+// My theme presets for the dropdown - convert from My Presets
 export const myThemes: ColorTheme[] = Object.entries(myPresets).map(([key, preset]) => ({
   name: preset.label || key,
   value: key,
