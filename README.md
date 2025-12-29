@@ -1,8 +1,18 @@
-# Byte School - Modern School Management System
+# Byte School – Smart Application for CBSE Schools
 
 ![Byte School Logo](public/logo.png)
 
-Byte School is a comprehensive, enterprise-grade school management software designed to help educational institutions automate manual paperwork, streamline administrative operations, and fully embrace a paperless future.
+Byte School is a powerful, open-source school ERP designed to meet the academic and administrative needs of CBSE-affiliated schools in India. It provides a centralized digital platform to manage students, teachers, classes, examinations, and school operations with ease and accuracy.
+
+Built as a secure cloud-based school management system, Byte School enables principals, administrators, and staff to access real-time academic data anytime, anywhere. From admissions and attendance to timetables and report cards, every process is streamlined to ensure smooth day-to-day functioning.
+
+Byte School replaces manual registers and fragmented systems with a single, intuitive interface. Automated workflows reduce paperwork, minimize errors, and improve communication between school management, teachers, students, and parents—creating a transparent and efficient school ecosystem.
+
+In addition to core academic modules, Byte School offers advanced features such as fee and finance management, transport tracking, hostel management, and staff payroll. The platform is fully customizable and open-source, allowing schools to adapt it to CBSE guidelines, school policies, and future growth.
+
+Whether you run a primary school, senior secondary CBSE school, or a large educational institution, Byte School helps you manage academics and administration smarter—so you can focus on delivering quality education.
+
+Digitize your school. Simplify operations. Empower education with Byte School
 
 ## 🎯 Project Vision
 
@@ -77,9 +87,7 @@ byte-school/
 │   │   ├── auth/       # Authentication pages (Login, Register, etc.)
 │   │   ├── dashboard/  # Dashboard pages (Home, Settings, etc.)
 │   │   ├── errors/     # Error pages (404, 500, etc.)
-│   │   ├── layout/     # Layout pages (Sidebar, Header, etc.)
 │   │   ├── landing/    # Landing pages (Home, Settings, etc.)
-│   │   ├── not-found/  # Not found pages (404, 500, etc.)
 │   │   ├── profile/    # Profile pages (Profile, Settings, etc.)
 │   │   ├── settings/   # Settings pages (Settings, etc.)
 │   │   ├── users/      # Users pages (Users, etc.)
