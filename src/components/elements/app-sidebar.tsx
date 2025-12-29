@@ -47,11 +47,6 @@ const data = {
           url: "/dashboard",
           icon: LayoutDashboard,
         },
-        {
-          title: "Dashboard 2",
-          url: "/dashboard-2",
-          icon: LayoutPanelLeft,
-        },
       ],
     },
     {
@@ -88,55 +83,6 @@ const data = {
       label: "Pages",
       items: [
         {
-          title: "Landing",
-          url: "/landing",
-          target: "_blank",
-          icon: LayoutTemplate,
-        },
-        {
-          title: "Auth Pages",
-          url: "#",
-          icon: Shield,
-          items: [
-            {
-              title: "Sign In 1",
-              url: "/auth/sign-in",
-            },
-            {
-              title: "Sign In 2",
-              url: "/auth/sign-in-2",
-            },
-            {
-              title: "Sign In 3",
-              url: "/auth/sign-in-3",
-            },
-            {
-              title: "Sign Up 1",
-              url: "/auth/sign-up",
-            },
-            {
-              title: "Sign Up 2",
-              url: "/auth/sign-up-2",
-            },
-            {
-              title: "Sign Up 3",
-              url: "/auth/sign-up-3",
-            },
-            {
-              title: "Forgot Password 1",
-              url: "/auth/forgot-password",
-            },
-            {
-              title: "Forgot Password 2",
-              url: "/auth/forgot-password-2",
-            },
-            {
-              title: "Forgot Password 3",
-              url: "/auth/forgot-password-3",
-            }
-          ],
-        },
-        {
           title: "Errors",
           url: "#",
           icon: AlertTriangle,
@@ -163,47 +109,6 @@ const data = {
             },
           ],
         },
-        {
-          title: "Settings",
-          url: "#",
-          icon: Settings,
-          items: [
-            {
-              title: "User Settings",
-              url: "/settings/user",
-            },
-            {
-              title: "Account Settings",
-              url: "/settings/account",
-            },
-            {
-              title: "Plans & Billing",
-              url: "/settings/billing",
-            },
-            {
-              title: "Appearance",
-              url: "/settings/appearance",
-            },
-            {
-              title: "Notifications",
-              url: "/settings/notifications",
-            },
-            {
-              title: "Connections",
-              url: "/settings/connections",
-            },
-          ],
-        },
-        {
-          title: "FAQs",
-          url: "/faqs",
-          icon: HelpCircle,
-        },
-        {
-          title: "Pricing",
-          url: "/pricing",
-          icon: CreditCard,
-        },
       ],
     },
   ],
@@ -217,12 +122,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link to="/dashboard">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg text-primary-foreground">
                   <Logo size={24} className="text-current" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-medium">Byte School</span>
-                  <span className="truncate text-xs">Admin Dashboard</span>
                 </div>
               </Link>
             </SidebarMenuButton>
@@ -235,7 +139,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
       <SidebarFooter>
-        <SidebarNotification />
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
