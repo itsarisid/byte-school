@@ -3,12 +3,19 @@
 import * as React from "react"
 import {
   LayoutDashboard,
-  Mail,
-  CheckSquare,
-  MessageCircle,
-  Calendar,
-  AlertTriangle,
   Users,
+  UserCheck,
+  GraduationCap,
+  BookOpen,
+  Calendar,
+  FileText,
+  ClipboardList,
+  CreditCard,
+  Wallet,
+  Bell,
+  MessageCircle,
+  AlertTriangle,
+  Settings,
 } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Logo } from "@/components/elements/logo"
@@ -33,7 +40,7 @@ const data = {
   },
   navGroups: [
     {
-      label: "Dashboards",
+      label: "General",
       items: [
         {
           title: "Dashboard",
@@ -43,38 +50,88 @@ const data = {
       ],
     },
     {
-      label: "Apps",
+      label: "Management",
       items: [
         {
-          title: "Mail",
-          url: "/mail",
-          icon: Mail,
-        },
-        {
-          title: "Tasks",
-          url: "/tasks",
-          icon: CheckSquare,
-        },
-        {
-          title: "Chat",
-          url: "/chat",
-          icon: MessageCircle,
-        },
-        {
-          title: "Calendar",
-          url: "/calendar",
-          icon: Calendar,
-        },
-        {
-          title: "Users",
-          url: "/users",
+          title: "Students",
+          url: "/students",
           icon: Users,
+        },
+        {
+          title: "Teachers",
+          url: "/teachers",
+          icon: GraduationCap,
+        },
+        {
+          title: "Classes",
+          url: "/classes",
+          icon: BookOpen,
+        },
+        {
+          title: "Attendance",
+          url: "/attendance",
+          icon: UserCheck,
         },
       ],
     },
     {
-      label: "Pages",
+      label: "Academic",
       items: [
+        {
+          title: "Exams",
+          url: "/exams",
+          icon: FileText,
+        },
+        {
+          title: "Timetable",
+          url: "/timetable",
+          icon: Calendar,
+        },
+        {
+          title: "Results",
+          url: "/results",
+          icon: ClipboardList,
+        },
+      ],
+    },
+    {
+      label: "Finance",
+      items: [
+        {
+          title: "Fees",
+          url: "/fees",
+          icon: CreditCard,
+        },
+        {
+          title: "Expenses",
+          url: "/expenses",
+          icon: Wallet,
+        },
+      ],
+    },
+    {
+      label: "Communication",
+      items: [
+        {
+          title: "Notices",
+          url: "/notices",
+          icon: Bell,
+        },
+        {
+          title: "Messages",
+          url: "/messages",
+          icon: MessageCircle,
+        },
+      ],
+    },
+    {
+      label: "System",
+      items: [
+        {
+          title: "Settings",
+          url: "/settings",
+          icon: Settings,
+        },
         {
           title: "Errors",
           url: "#",

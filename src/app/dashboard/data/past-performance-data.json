@@ -1,47 +1,29 @@
 [
   {
-    "id": 1,
-    "header": "Federal Communications Commission - Network Infrastructure Modernization",
-    "type": "Government Contract",
-    "status": "Completed",
-    "target": "95%",
-    "limit": "100%",
-    "reviewer": "Eddie Lake"
+    "id": 101,
+    "name": "Sajid Khan",
+    "grade": "Senior Teacher",
+    "status": "Done",
+    "rollNo": "STAFF001",
+    "performance": "Exemplary",
+    "parent": "Admin"
   },
   {
-    "id": 2,
-    "header": "Department of Defense - Cybersecurity Enhancement Program",
-    "type": "Defense Contract",
-    "status": "Completed",
-    "target": "98%",
-    "limit": "100%",
-    "reviewer": "Jamik Tashpulatov"
+    "id": 102,
+    "name": "Umair Malik",
+    "grade": "Coordinator",
+    "status": "Done",
+    "rollNo": "STAFF002",
+    "performance": "Superior",
+    "parent": "Admin"
   },
   {
-    "id": 3,
-    "header": "NASA - Satellite Communication System Upgrade",
-    "type": "Space Technology",
-    "status": "Completed",
-    "target": "92%",
-    "limit": "95%",
-    "reviewer": "Emily Whalen"
-  },
-  {
-    "id": 4,
-    "header": "Department of Homeland Security - Border Security Tech",
-    "type": "Security Contract",
-    "status": "In Progress",
-    "target": "85%",
-    "limit": "90%",
-    "reviewer": "Eddie Lake"
-  },
-  {
-    "id": 5,
-    "header": "GSA - Cloud Infrastructure Migration",
-    "type": "IT Services",
-    "status": "Completed",
-    "target": "96%",
-    "limit": "98%",
-    "reviewer": "Jamik Tashpulatov"
+    "id": 103,
+    "name": "Imtiyaz Pasha",
+    "grade": "Lecturer",
+    "status": "In Process",
+    "rollNo": "STAFF003",
+    "performance": "Good",
+    "parent": "Admin"
   }
 ]

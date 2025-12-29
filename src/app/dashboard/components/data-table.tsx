@@ -160,20 +160,20 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "header",
-    header: "Header",
+    accessorKey: "name",
+    header: "Student Name",
     cell: ({ row }) => {
       return <TableCellViewer item={row.original} />
     },
     enableHiding: false,
   },
   {
-    accessorKey: "type",
-    header: "Section Type",
+    accessorKey: "grade",
+    header: "Grade",
     cell: ({ row }) => (
       <div className="w-32">
         <Badge variant="outline" className="text-muted-foreground px-1.5">
-          {row.original.type}
+          {row.original.grade}
         </Badge>
       </div>
     ),
@@ -193,82 +193,82 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
     ),
   },
   {
-    accessorKey: "target",
-    header: () => <div className="w-full">Target</div>,
+    accessorKey: "rollNo",
+    header: () => <div className="w-full">Roll No</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
           e.preventDefault()
           toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
+            loading: `Saving ${row.original.name}`,
             success: "Done",
             error: "Error",
           })
         }}
       >
-        <Label htmlFor={`${row.original.id}-target`} className="sr-only">
-          Target
+        <Label htmlFor={`${row.original.id}-rollNo`} className="sr-only">
+          Roll No
         </Label>
         <Input
           className="hover:bg-input/30 focus-visible:bg-background dark:hover:bg-input/30 dark:focus-visible:bg-input/30 h-8 w-16 border-transparent bg-transparent shadow-none focus-visible:border dark:bg-transparent"
-          defaultValue={row.original.target}
-          id={`${row.original.id}-target`}
+          defaultValue={row.original.rollNo}
+          id={`${row.original.id}-rollNo`}
         />
       </form>
     ),
   },
   {
-    accessorKey: "limit",
-    header: () => <div className="w-full">Limit</div>,
+    accessorKey: "performance",
+    header: () => <div className="w-full">Performance</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
           e.preventDefault()
           toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
+            loading: `Saving ${row.original.name}`,
             success: "Done",
             error: "Error",
           })
         }}
       >
-        <Label htmlFor={`${row.original.id}-limit`} className="sr-only">
-          Limit
+        <Label htmlFor={`${row.original.id}-performance`} className="sr-only">
+          Performance
         </Label>
         <Input
           className="hover:bg-input/30 focus-visible:bg-background dark:hover:bg-input/30 dark:focus-visible:bg-input/30 h-8 w-16 border-transparent bg-transparent shadow-none focus-visible:border dark:bg-transparent"
-          defaultValue={row.original.limit}
-          id={`${row.original.id}-limit`}
+          defaultValue={row.original.performance}
+          id={`${row.original.id}-performance`}
         />
       </form>
     ),
   },
   {
-    accessorKey: "reviewer",
-    header: "Reviewer",
+    accessorKey: "parent",
+    header: "Parent/Guardian",
     cell: ({ row }) => {
-      const isAssigned = row.original.reviewer !== "Assign reviewer"
+      const isAssigned = row.original.parent !== "Assign parent"
 
       if (isAssigned) {
-        return row.original.reviewer
+        return row.original.parent
       }
 
       return (
         <>
-          <Label htmlFor={`${row.original.id}-reviewer`} className="sr-only">
-            Reviewer
+          <Label htmlFor={`${row.original.id}-parent`} className="sr-only">
+            Parent
           </Label>
           <Select>
             <SelectTrigger
               className="w-38 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate cursor-pointer"
               size="sm"
-              id={`${row.original.id}-reviewer`}
+              id={`${row.original.id}-parent`}
             >
-              <SelectValue placeholder="Assign reviewer" />
+              <SelectValue placeholder="Assign parent" />
             </SelectTrigger>
             <SelectContent align="end">
-              <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
-              <SelectItem value="Jamik Tashpulatov">
-                Jamik Tashpulatov
+              <SelectItem value="Parent A">Parent A</SelectItem>
+              <SelectItem value="Parent B">
+                Parent B
               </SelectItem>
             </SelectContent>
           </Select>
@@ -526,14 +526,14 @@ export function DataTable({
   }
 
   // Component for rendering table content
-  const TableContent = ({ 
-    currentTable, 
-    currentDataIds, 
-    handleCurrentDragEnd 
-  }: { 
-    currentTable: ReturnType<typeof useReactTable<z.infer<typeof schema>>>, 
-    currentDataIds: UniqueIdentifier[], 
-    handleCurrentDragEnd: (event: DragEndEvent) => void 
+  const TableContent = ({
+    currentTable,
+    currentDataIds,
+    handleCurrentDragEnd
+  }: {
+    currentTable: ReturnType<typeof useReactTable<z.infer<typeof schema>>>,
+    currentDataIds: UniqueIdentifier[],
+    handleCurrentDragEnd: (event: DragEndEvent) => void
   }) => (
     <>
       <div className="overflow-hidden rounded-lg border">
@@ -554,9 +554,9 @@ export function DataTable({
                         {header.isPlaceholder
                           ? null
                           : flexRender(
-                              header.column.columnDef.header,
-                              header.getContext()
-                            )}
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
                       </TableHead>
                     )
                   })}
@@ -669,14 +669,14 @@ export function DataTable({
 
   return (
     <Tabs
-      defaultValue="outline"
+      defaultValue="students"
       className="w-full flex-col justify-start gap-6"
     >
       <div className="flex items-center justify-between px-4 lg:px-6 flex-wrap gap-3">
         <Label htmlFor="view-selector" className="sr-only">
           View
         </Label>
-        <Select defaultValue="outline">
+        <Select defaultValue="students">
           <SelectTrigger
             className="flex w-fit sm:hidden cursor-pointer"
             size="sm"
@@ -685,21 +685,21 @@ export function DataTable({
             <SelectValue placeholder="Select a view" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="outline">Outline</SelectItem>
-            <SelectItem value="past-performance">Past Performance</SelectItem>
-            <SelectItem value="key-personnel">Key Personnel</SelectItem>
-            <SelectItem value="focus-documents">Focus Documents</SelectItem>
+            <SelectItem value="students">Students</SelectItem>
+            <SelectItem value="teachers">Teachers</SelectItem>
+            <SelectItem value="classes">Classes</SelectItem>
+            <SelectItem value="exams">Exams</SelectItem>
           </SelectContent>
         </Select>
         <TabsList className="**:data-[slot=badge]:bg-muted-foreground/30 hidden **:data-[slot=badge]:size-5 **:data-[slot=badge]:rounded-full **:data-[slot=badge]:px-1 sm:flex">
-          <TabsTrigger value="outline" className="cursor-pointer">Outline</TabsTrigger>
-          <TabsTrigger value="past-performance" className="cursor-pointer">
-            Past Performance <Badge variant="secondary">3</Badge>
+          <TabsTrigger value="students" className="cursor-pointer">Students</TabsTrigger>
+          <TabsTrigger value="teachers" className="cursor-pointer">
+            Teachers <Badge variant="secondary">12</Badge>
           </TabsTrigger>
-          <TabsTrigger value="key-personnel" className="cursor-pointer">
-            Key Personnel <Badge variant="secondary">2</Badge>
+          <TabsTrigger value="classes" className="cursor-pointer">
+            Classes <Badge variant="secondary">8</Badge>
           </TabsTrigger>
-          <TabsTrigger value="focus-documents" className="cursor-pointer">Focus Documents</TabsTrigger>
+          <TabsTrigger value="exams" className="cursor-pointer">Upcoming Exams</TabsTrigger>
         </TabsList>
         <div className="flex items-center gap-2">
           <DropdownMenu>
@@ -742,7 +742,7 @@ export function DataTable({
         </div>
       </div>
       <TabsContent
-        value="outline"
+        value="students"
         className="relative flex flex-col gap-4 overflow-auto px-4 lg:px-6"
       >
         <div className="overflow-hidden rounded-lg border">
@@ -763,9 +763,9 @@ export function DataTable({
                           {header.isPlaceholder
                             ? null
                             : flexRender(
-                                header.column.columnDef.header,
-                                header.getContext()
-                              )}
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
                         </TableHead>
                       )
                     })}
@@ -875,30 +875,30 @@ export function DataTable({
         </div>
       </TabsContent>
       <TabsContent
-        value="past-performance"
+        value="teachers"
         className="relative flex flex-col gap-4 overflow-auto px-4 lg:px-6"
       >
-        <TableContent 
+        <TableContent
           currentTable={pastPerformanceTable}
           currentDataIds={pastPerformanceIds}
           handleCurrentDragEnd={handlePastPerformanceDragEnd}
         />
       </TabsContent>
-      <TabsContent 
-        value="key-personnel" 
+      <TabsContent
+        value="classes"
         className="relative flex flex-col gap-4 overflow-auto px-4 lg:px-6"
       >
-        <TableContent 
+        <TableContent
           currentTable={keyPersonnelTable}
           currentDataIds={keyPersonnelIds}
           handleCurrentDragEnd={handleKeyPersonnelDragEnd}
         />
       </TabsContent>
       <TabsContent
-        value="focus-documents"
+        value="exams"
         className="relative flex flex-col gap-4 overflow-auto px-4 lg:px-6"
       >
-        <TableContent 
+        <TableContent
           currentTable={focusDocumentsTable}
           currentDataIds={focusDocumentsIds}
           handleCurrentDragEnd={handleFocusDocumentsDragEnd}
@@ -935,14 +935,14 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
     <Drawer direction={isMobile ? "bottom" : "right"}>
       <DrawerTrigger asChild>
         <Button variant="link" className="text-foreground w-fit px-0 text-left cursor-pointer">
-          {item.header}
+          {item.name}
         </Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="gap-1">
-          <DrawerTitle>{item.header}</DrawerTitle>
+          <DrawerTitle>{item.name}</DrawerTitle>
           <DrawerDescription>
-            Showing total visitors for the last 6 months
+            Individual student performance and details
           </DrawerDescription>
         </DrawerHeader>
         <div className="flex flex-col gap-4 overflow-y-auto px-4 text-sm">
@@ -991,13 +991,10 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
               <Separator />
               <div className="grid gap-2">
                 <div className="flex gap-2 leading-none font-medium">
-                  Trending up by 5.2% this month{" "}
-                  <TrendingUp className="size-4" />
+                  Academic Improvement identified <TrendingUp className="size-4" />
                 </div>
                 <div className="text-muted-foreground">
-                  Showing total visitors for the last 6 months. This is just
-                  some random text to test the layout. It spans multiple lines
-                  and should wrap around.
+                  Student shows consistent progress in core subjects over the last semester.
                 </div>
               </div>
               <Separator />
@@ -1005,35 +1002,13 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
           )}
           <form className="flex flex-col gap-4">
             <div className="flex flex-col gap-3">
-              <Label htmlFor="header">Header</Label>
-              <Input id="header" defaultValue={item.header} />
+              <Label htmlFor="name">Student Name</Label>
+              <Input id="name" defaultValue={item.name} />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-3">
-                <Label htmlFor="type">Type</Label>
-                <Select defaultValue={item.type}>
-                  <SelectTrigger id="type" className="w-full cursor-pointer">
-                    <SelectValue placeholder="Select a type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Table of Contents">
-                      Table of Contents
-                    </SelectItem>
-                    <SelectItem value="Executive Summary">
-                      Executive Summary
-                    </SelectItem>
-                    <SelectItem value="Technical Approach">
-                      Technical Approach
-                    </SelectItem>
-                    <SelectItem value="Design">Design</SelectItem>
-                    <SelectItem value="Capabilities">Capabilities</SelectItem>
-                    <SelectItem value="Focus Documents">
-                      Focus Documents
-                    </SelectItem>
-                    <SelectItem value="Narrative">Narrative</SelectItem>
-                    <SelectItem value="Cover Page">Cover Page</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Label htmlFor="grade">Grade</Label>
+                <Input id="grade" defaultValue={item.grade} />
               </div>
               <div className="flex flex-col gap-3">
                 <Label htmlFor="status">Status</Label>
@@ -1042,37 +1017,26 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                     <SelectValue placeholder="Select a status" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Done">Done</SelectItem>
-                    <SelectItem value="In Progress">In Progress</SelectItem>
-                    <SelectItem value="Not Started">Not Started</SelectItem>
+                    <SelectItem value="Done">Present</SelectItem>
+                    <SelectItem value="In Process">Late</SelectItem>
+                    <SelectItem value="Not Started">Absent</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-3">
-                <Label htmlFor="target">Target</Label>
-                <Input id="target" defaultValue={item.target} />
+                <Label htmlFor="rollNo">Roll No</Label>
+                <Input id="rollNo" defaultValue={item.rollNo} />
               </div>
               <div className="flex flex-col gap-3">
-                <Label htmlFor="limit">Limit</Label>
-                <Input id="limit" defaultValue={item.limit} />
+                <Label htmlFor="performance">Performance</Label>
+                <Input id="performance" defaultValue={item.performance} />
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <Label htmlFor="reviewer">Reviewer</Label>
-              <Select defaultValue={item.reviewer}>
-                <SelectTrigger id="reviewer" className="w-full cursor-pointer">
-                  <SelectValue placeholder="Select a reviewer" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
-                  <SelectItem value="Jamik Tashpulatov">
-                    Jamik Tashpulatov
-                  </SelectItem>
-                  <SelectItem value="Emily Whalen">Emily Whalen</SelectItem>
-                </SelectContent>
-              </Select>
+              <Label htmlFor="parent">Parent/Guardian</Label>
+              <Input id="parent" defaultValue={item.parent} />
             </div>
           </form>
         </div>

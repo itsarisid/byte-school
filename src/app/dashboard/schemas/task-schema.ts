@@ -2,12 +2,12 @@ import { z } from "zod"
 
 export const schema = z.object({
   id: z.number(),
-  header: z.string(),
-  type: z.string(),
+  name: z.string(),
+  grade: z.string(),
   status: z.string(),
-  target: z.string(),
-  limit: z.string(),
-  reviewer: z.string(),
+  rollNo: z.string(),
+  performance: z.string(),
+  parent: z.string(),
 })
 
 export type Task = z.infer<typeof schema>
