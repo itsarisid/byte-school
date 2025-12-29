@@ -4,8 +4,6 @@ import * as React from "react"
 import { AppSidebar } from "@/components/elements/app-sidebar"
 import { SiteHeader } from "@/components/elements/site-header"
 import { SiteFooter } from "@/components/elements/site-footer"
-import { ThemeCustomizer, ThemeCustomizerTrigger } from "@/components/elements/theme-customizer"
-import { UpgradeToProButton } from "@/components/elements/upgrade-to-pro-button"
 import { useSidebarConfig } from "@/hooks/use-sidebar-config"
 import {
   SidebarInset,
@@ -19,7 +17,6 @@ interface BaseLayoutProps {
 }
 
 export function BaseLayout({ children, title, description }: BaseLayoutProps) {
-  const [themeCustomizerOpen, setThemeCustomizerOpen] = React.useState(false)
   const { config } = useSidebarConfig()
 
   return (
@@ -59,7 +56,7 @@ export function BaseLayout({ children, title, description }: BaseLayoutProps) {
                 </div>
               </div>
             </div>
-            <SiteFooter />
+            {config.showFooter && <SiteFooter />}
           </SidebarInset>
         </>
       ) : (
@@ -83,7 +80,7 @@ export function BaseLayout({ children, title, description }: BaseLayoutProps) {
                 </div>
               </div>
             </div>
-            <SiteFooter />
+            {config.showFooter && <SiteFooter />}
           </SidebarInset>
           <AppSidebar
             variant={config.variant}
@@ -92,13 +89,6 @@ export function BaseLayout({ children, title, description }: BaseLayoutProps) {
           />
         </>
       )}
-
-      {/* Theme Customizer */}
-      <ThemeCustomizerTrigger onClick={() => setThemeCustomizerOpen(true)} />
-      <ThemeCustomizer
-        open={themeCustomizerOpen}
-        onOpenChange={setThemeCustomizerOpen}
-      />
     </SidebarProvider>
   )
 }

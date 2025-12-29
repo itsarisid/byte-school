@@ -7,7 +7,8 @@ export const sidebarConfigAtom = atomWithStorage<SidebarConfig>('sidebar-config'
     variant: "inset",
     collapsible: "offcanvas",
     side: "left",
-    isHeaderSticky: true
+    isHeaderSticky: true,
+    showFooter: true
 })
 
 // Theme selection atoms

@@ -9,6 +9,7 @@ export interface SidebarConfig {
   collapsible: "offcanvas" | "icon" | "none"
   side: "left" | "right"
   isHeaderSticky: boolean
+  showFooter: boolean
 }
 
 export interface SidebarContextValue {

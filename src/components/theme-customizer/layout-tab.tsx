@@ -33,6 +33,10 @@ export function LayoutTab() {
     updateSidebarConfig({ isHeaderSticky: checked })
   }
 
+  const handleShowFooterChange = (checked: boolean) => {
+    updateSidebarConfig({ showFooter: checked })
+  }
+
   return (
     <div className="p-4 space-y-6">
       {/* Sidebar Configuration */}
@@ -53,8 +57,8 @@ export function LayoutTab() {
             <div
               key={variant.value}
               className={`relative p-4 border rounded-md cursor-pointer transition-colors ${sidebarConfig.variant === variant.value
-                  ? "border-primary bg-primary/10"
-                  : "border-border hover:border-border/60"
+                ? "border-primary bg-primary/10"
+                : "border-border hover:border-border/60"
                 }`}
               onClick={() => handleSidebarVariantSelect(variant.value as "sidebar" | "floating" | "inset")}
             >
@@ -65,8 +69,8 @@ export function LayoutTab() {
                   {/* Sidebar representation - smaller and more proportional */}
                   <div
                     className={`w-3 flex-shrink-0 bg-muted flex flex-col gap-0.5 p-1 ${variant.value === "floating" ? "border-r m-1 rounded" :
-                        variant.value === "inset" ? "m-1 ms-0 rounded bg-muted/80" :
-                          "border-r"
+                      variant.value === "inset" ? "m-1 ms-0 rounded bg-muted/80" :
+                        "border-r"
                       }`}
                   >
                     {/* Menu icon representations - clearer and more visible */}
@@ -104,8 +108,8 @@ export function LayoutTab() {
             <div
               key={option.value}
               className={`relative p-4 border rounded-md cursor-pointer transition-colors ${sidebarConfig.collapsible === option.value
-                  ? "border-primary bg-primary/10"
-                  : "border-border hover:border-border/60"
+                ? "border-primary bg-primary/10"
+                : "border-border hover:border-border/60"
                 }`}
               onClick={() => handleSidebarCollapsibleSelect(option.value as "offcanvas" | "icon" | "none")}
             >
@@ -170,8 +174,8 @@ export function LayoutTab() {
             <div
               key={side.value}
               className={`relative p-4 border rounded-md cursor-pointer transition-colors ${sidebarConfig.side === side.value
-                  ? "border-primary bg-primary/10"
-                  : "border-border hover:border-border/60"
+                ? "border-primary bg-primary/10"
+                : "border-border hover:border-border/60"
                 }`}
               onClick={() => handleSidebarSideSelect(side.value as "left" | "right")}
             >
@@ -211,7 +215,6 @@ export function LayoutTab() {
 
       <Separator />
 
-      {/* Sticky Header Configuration */}
       <div className="flex items-center justify-between">
         <div className="space-y-0.5">
           <Label className="text-sm font-medium">Sticky Header</Label>
@@ -220,6 +223,21 @@ export function LayoutTab() {
         <Switch
           checked={sidebarConfig.isHeaderSticky}
           onCheckedChange={handleStickyHeaderChange}
+          className="cursor-pointer"
+        />
+      </div>
+
+      <Separator />
+
+      {/* Footer Configuration */}
+      <div className="flex items-center justify-between">
+        <div className="space-y-0.5">
+          <Label className="text-sm font-medium">Show Footer</Label>
+          <p className="text-xs text-muted-foreground">Display the footer at the bottom of the page</p>
+        </div>
+        <Switch
+          checked={sidebarConfig.showFooter}
+          onCheckedChange={handleShowFooterChange}
           className="cursor-pointer"
         />
       </div>
