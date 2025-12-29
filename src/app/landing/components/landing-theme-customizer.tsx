@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { Palette, RotateCcw, Settings, X, Dices, Upload, ExternalLink, Sun, Moon } from 'lucide-react'
+import { RotateCcw, Settings, X, Dices, Upload, Sun, Moon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { Label } from '@/components/ui/label'
