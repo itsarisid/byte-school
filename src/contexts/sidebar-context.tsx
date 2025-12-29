@@ -1,11 +1,14 @@
 "use client"
 
 import * as React from "react"
+import { useAtom } from 'jotai'
+import { sidebarConfigAtom } from '@/store/theme-store'
 
 export interface SidebarConfig {
   variant: "sidebar" | "floating" | "inset"
   collapsible: "offcanvas" | "icon" | "none"
   side: "left" | "right"
+  isHeaderSticky: boolean
 }
 
 export interface SidebarContextValue {
@@ -16,15 +19,11 @@ export interface SidebarContextValue {
 export const SidebarContext = React.createContext<SidebarContextValue | null>(null)
 
 export function SidebarConfigProvider({ children }: { children: React.ReactNode }) {
-  const [config, setConfig] = React.useState<SidebarConfig>({
-    variant: "inset",
-    collapsible: "offcanvas", 
-    side: "left"
-  })
+  const [config, setConfig] = useAtom(sidebarConfigAtom)
 
   const updateConfig = React.useCallback((newConfig: Partial<SidebarConfig>) => {
     setConfig(prev => ({ ...prev, ...newConfig }))
-  }, [])
+  }, [setConfig])
 
   return (
     <SidebarContext.Provider value={{ config, updateConfig }}>

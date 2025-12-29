@@ -6,10 +6,12 @@ import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { CommandSearch, SearchTrigger } from "@/components/elements/command-search"
 import { ModeToggle } from "@/components/elements/mode-toggle"
-import { getAppUrl } from "@/lib/utils"
+import { getAppUrl, cn } from "@/lib/utils"
+import { useSidebarConfig } from "@/hooks/use-sidebar-config"
 
 export function SiteHeader() {
   const [searchOpen, setSearchOpen] = React.useState(false)
+  const { config } = useSidebarConfig()
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -25,7 +27,10 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="flex h-(--header-height) shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height)">
+      <header className={cn(
+        "flex h-(--header-height) shrink-0 items-center gap-2 border-b transition-[width,height,top] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height) bg-background/95 backdrop-blur-sm z-30",
+        config.isHeaderSticky ? "sticky top-0" : "relative"
+      )}>
         <div className="flex w-full items-center gap-1 px-4 py-3 lg:gap-2 lg:px-6">
           <SidebarTrigger className="-ml-1" />
           <Separator

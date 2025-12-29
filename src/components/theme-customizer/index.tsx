@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react'
+import { useAtom } from 'jotai'
 import { Layout, Palette, RotateCcw, Settings, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet'
@@ -12,6 +13,12 @@ import { ThemeTab } from './theme-tab'
 import { LayoutTab } from './layout-tab'
 import { ImportModal } from './import-modal'
 import { cn } from '@/lib/utils'
+import {
+  selectedThemeAtom,
+  selectedMyThemeAtom,
+  selectedRadiusAtom,
+  importedThemeAtom
+} from '@/store/theme-store'
 import type { ImportedTheme } from '@/types/theme-customizer'
 
 interface ThemeCustomizerProps {
@@ -24,11 +31,11 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
   const { config: sidebarConfig, updateConfig: updateSidebarConfig } = useSidebarConfig()
 
   const [activeTab, setActiveTab] = React.useState("theme")
-  const [selectedTheme, setSelectedTheme] = React.useState("default")
-  const [selectedMyTheme, setSelectedMyTheme] = React.useState("")
-  const [selectedRadius, setSelectedRadius] = React.useState("0.5rem")
+  const [selectedTheme, setSelectedTheme] = useAtom(selectedThemeAtom)
+  const [selectedMyTheme, setSelectedMyTheme] = useAtom(selectedMyThemeAtom)
+  const [selectedRadius, setSelectedRadius] = useAtom(selectedRadiusAtom)
   const [importModalOpen, setImportModalOpen] = React.useState(false)
-  const [importedTheme, setImportedTheme] = React.useState<ImportedTheme | null>(null)
+  const [importedTheme, setImportedTheme] = useAtom(importedThemeAtom)
 
   const handleReset = () => {
     // Complete reset to application defaults

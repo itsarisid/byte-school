@@ -2,13 +2,25 @@
 
 import React from 'react'
 import { useTheme } from '@/hooks/use-theme'
+import { useAtom } from 'jotai'
+import {
+  brandColorsAtom,
+  selectedThemeAtom,
+  selectedMyThemeAtom,
+  selectedRadiusAtom,
+  importedThemeAtom
+} from '@/store/theme-store'
 import { baseColors } from '@/config/theme-customizer-constants'
-import { colorThemes } from '@/config/theme-data'
+import { colorThemes, myThemes } from '@/config/theme-data'
 import type { ThemePreset, ImportedTheme } from '@/types/theme-customizer'
 
 export function useThemeManager() {
   const { theme, setTheme } = useTheme()
-  const [brandColorsValues, setBrandColorsValues] = React.useState<Record<string, string>>({})
+  const [brandColorsValues, setBrandColorsValues] = useAtom(brandColorsAtom)
+  const [selectedTheme] = useAtom(selectedThemeAtom)
+  const [selectedMyTheme] = useAtom(selectedMyThemeAtom)
+  const [selectedRadius] = useAtom(selectedRadiusAtom)
+  const [importedTheme] = useAtom(importedThemeAtom)
 
   // Simple, reliable theme detection - just follow the theme provider
   const isDarkMode = React.useMemo(() => {
@@ -132,7 +144,49 @@ export function useThemeManager() {
 
   const handleColorChange = (cssVar: string, value: string) => {
     document.documentElement.style.setProperty(cssVar, value)
+    setBrandColorsValues(prev => ({ ...prev, [cssVar]: value }))
   }
+
+  // Effect to apply ALL persisted settings on load and when key atoms change
+  React.useEffect(() => {
+    const root = document.documentElement
+
+    // 1. Reset first to be safe
+    resetTheme()
+
+    // 2. Apply theme (Standard or "My Theme")
+    if (importedTheme) {
+      const themeVars = isDarkMode ? importedTheme.dark : importedTheme.light
+      Object.entries(themeVars).forEach(([variable, value]) => {
+        root.style.setProperty(`--${variable}`, value)
+      })
+    } else if (selectedTheme && selectedTheme !== "default") {
+      const themeData = colorThemes.find(t => t.value === selectedTheme)
+      if (themeData) {
+        const styles = isDarkMode ? themeData.preset.styles.dark : themeData.preset.styles.light
+        Object.entries(styles).forEach(([key, value]) => {
+          root.style.setProperty(`--${key}`, value)
+        })
+      }
+    } else if (selectedMyTheme) {
+      const myTheme = myThemes.find(t => t.value === selectedMyTheme)
+      if (myTheme) {
+        const styles = isDarkMode ? myTheme.preset.styles.dark : myTheme.preset.styles.light
+        Object.entries(styles).forEach(([key, value]) => {
+          root.style.setProperty(`--${key}`, value)
+        })
+      }
+    }
+
+    // 3. Apply custom color overrides
+    Object.entries(brandColorsValues).forEach(([cssVar, value]) => {
+      root.style.setProperty(cssVar, value)
+    })
+
+    // 4. Apply radius
+    root.style.setProperty('--radius', selectedRadius)
+
+  }, [isDarkMode, selectedTheme, selectedMyTheme, selectedRadius, importedTheme, brandColorsValues, resetTheme])
 
   return {
     theme,
