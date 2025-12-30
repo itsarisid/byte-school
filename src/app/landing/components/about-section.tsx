@@ -4,28 +4,28 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { CardDecorator } from '@/components/ui/card-decorator'
-import { Github, Code, Palette, Layout, Crown } from 'lucide-react'
+import { Github, BookOpen, Cloud, Lock } from 'lucide-react'
 
 const values = [
   {
-    icon: Code,
-    title: 'Education First',
-    description: 'Every feature is designed with educators and students in mind, ensuring the platform enhances the learning experience.'
+    icon: BookOpen,
+    title: 'CBSE Aligned',
+    description: 'Specifically tailored to meet the academic and administrative guidelines of CBSE-affiliated schools in India.'
   },
   {
-    icon: Palette,
-    title: 'User-Friendly Design',
-    description: 'Intuitive interfaces that require minimal training, making it easy for teachers, staff, and parents to adopt.'
+    icon: Cloud,
+    title: 'Paperless Vision',
+    description: 'Replacing manual registers and fragmented systems with a single, intuitive digital ecosystem.'
   },
   {
-    icon: Layout,
-    title: 'Reliable & Secure',
-    description: 'Enterprise-grade security and 99.9% uptime to ensure your school data is always safe and accessible.'
+    icon: Lock,
+    title: 'Secure Architecture',
+    description: 'Scalable, cloud-based platform focusing on data integrity and enterprise-grade security.'
   },
   {
-    icon: Crown,
-    title: 'Continuous Innovation',
-    description: 'Regular updates and new features based on feedback from schools and educational institutions worldwide.'
+    icon: Github,
+    title: 'Open Source',
+    description: 'A transparent, community-driven ERP that schools can adapt to their unique policies and future growth.'
   }
 ]
 
@@ -40,10 +40,10 @@ export function AboutSection() {
             About Byte School
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
-            Built for schools, by educators
+            Designed for CBSE schools, built for the future
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            We're passionate about transforming education through technology. Our mission is to help schools eliminate paperwork, streamline operations, and focus on what matters most—providing quality education to students.
+            Byte School is dedicated to digitizing school operations across India. Our mission is to provide an affordable, open-source ERP that empowers educators and simplifies administration.
           </p>
         </div>
 

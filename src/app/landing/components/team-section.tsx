@@ -14,7 +14,7 @@ const team = [
     id: 1,
     name: 'Sajid Khan',
     role: 'Founder & CEO',
-    description: 'Passionate educator and technology enthusiast dedicated to transforming education through innovative solutions.',
+    description: 'Passionate educator and visionary founder dedicated to digitizing CBSE schools across India through smart ERP solutions.',
     image: 'https://ui-avatars.com/api/?name=Sajid+Khan&size=150&background=0D8ABC&color=fff',
     fallback: 'SK',
     social: {
@@ -27,7 +27,7 @@ const team = [
     id: 2,
     name: 'Umair Malik',
     role: 'Chief Technology Officer',
-    description: 'Full-stack developer with expertise in building scalable educational platforms and modern web applications.',
+    description: 'Architect behind the scalable Byte School platform, focused on secure cloud infrastructure and AI-driven educational tools.',
     image: 'https://ui-avatars.com/api/?name=Umair+Malik&size=150&background=6366F1&color=fff',
     fallback: 'UM',
     social: {
@@ -40,7 +40,7 @@ const team = [
     id: 3,
     name: 'Imtiyaz Pasha',
     role: 'Head of Product',
-    description: 'Product strategist focused on creating engaging learning experiences and user-centric educational tools.',
+    description: 'Product leader focused on creating intuitive, CBSE-aligned user experiences for teachers, parents, and students.',
     image: 'https://ui-avatars.com/api/?name=Imtiyaz+Pasha&size=150&background=10B981&color=fff',
     fallback: 'IP',
     social: {

@@ -9,7 +9,14 @@ import {
   Package,
   Crown,
   Layout,
-  Palette
+  Palette,
+  Sparkles,
+  BookOpen,
+  CreditCard,
+  MessageSquare,
+  Video,
+  Shield,
+  MapPin
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -17,47 +24,47 @@ import { Image3D } from '@/components/elements/image-3d'
 
 const mainFeatures = [
   {
-    icon: Package,
-    title: 'Student Management',
-    description: 'Complete student profiles, enrollment, attendance tracking, and academic records in one centralized system.'
-  },
-  {
     icon: Users,
-    title: 'Staff & Faculty Management',
-    description: 'Manage teacher schedules, assignments, payroll, and performance tracking effortlessly.'
+    title: 'Core Academic Module',
+    description: 'Manage student admissions, teacher profiles, and class enrollments in a centralized platform.'
   },
   {
-    icon: Layout,
-    title: 'Digital Classrooms',
-    description: 'Online assignments, grade books, and communication tools for modern education.'
+    icon: Sparkles,
+    title: 'AI-Enhanced Hub',
+    description: 'Career guidance, intelligent evaluation of assignments, and predictive performance analytics.'
   },
   {
-    icon: Zap,
-    title: 'Automated Workflows',
-    description: 'Eliminate manual paperwork with automated admissions, fee collection, and report generation.'
+    icon: BookOpen,
+    title: 'LMS Module',
+    description: 'Deliver interactive courses, track assignments, and conduct online quizzes with ease.'
+  },
+  {
+    icon: CreditCard,
+    title: 'ERP & Finance',
+    description: 'Automated fee collection, payroll management, and comprehensive expense tracking.'
   }
 ]
 
 const secondaryFeatures = [
   {
-    icon: BarChart3,
-    title: 'Analytics & Reports',
-    description: 'Real-time insights into student performance, attendance trends, and institutional metrics.'
+    icon: MessageSquare,
+    title: 'Smart Communication',
+    description: 'Real-time parent alerts via WhatsApp and SMS for attendance and performance updates.'
   },
   {
-    icon: Palette,
-    title: 'Parent Portal',
-    description: 'Keep parents informed with real-time updates on attendance, grades, and school activities.'
+    icon: Video,
+    title: 'Virtual Learning',
+    description: 'Seamless integration with Zoom, Google Meet, and Microsoft Teams for hybrid education.'
   },
   {
-    icon: Database,
-    title: 'Secure Data Storage',
-    description: 'Cloud-based storage with enterprise-grade security for all your school records.'
+    icon: MapPin,
+    title: 'Advanced Operations',
+    description: 'GPS-enabled transport tracking, library management, and hostel/cafeteria operations.'
   },
   {
-    icon: Crown,
-    title: 'Mobile Access',
-    description: 'Access your school management system anytime, anywhere from any device.'
+    icon: Shield,
+    title: 'Secure & Cloud-Based',
+    description: 'Enterprise-grade security architecture with 24/7 access to your institutional data.'
   }
 ]
 
@@ -70,10 +77,10 @@ export function FeaturesSection() {
         <div className="mx-auto max-w-2xl text-center mb-16">
           <Badge variant="outline" className="mb-4">Key Features</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            Everything your school needs in one platform
+            A comprehensive ecosystem for your school
           </h2>
           <p className="text-lg text-muted-foreground">
-            Byte School provides a complete suite of tools to manage every aspect of your educational institution, from student enrollment to graduation.
+            Byte School replaces fragmented systems with a single, intuitive platform to manage every aspect of CBSE school operations.
           </p>
         </div>
 
@@ -90,10 +97,10 @@ export function FeaturesSection() {
           <div className="space-y-6">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
-                Streamline school operations effortlessly
+                Digitize your institutional operations
               </h3>
               <p className="text-muted-foreground text-base text-pretty">
-                From student admissions to daily attendance, manage all your school's core functions in one unified platform designed for educational excellence.
+                From admissions to graduation, Byte School automates the entire student lifecycle while providing real-time data access for all stakeholders.
               </p>
             </div>
 
@@ -133,10 +140,10 @@ export function FeaturesSection() {
           <div className="space-y-6 order-2 lg:order-1">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
-                Go paperless with confidence
+                Empower education with smart tools
               </h3>
               <p className="text-muted-foreground text-base text-pretty">
-                Eliminate manual paperwork and reduce administrative burden with automated processes, digital records, and real-time reporting capabilities.
+                Leverage AI insights and seamless virtual integrations to provide a modern, high-quality learning experience for your students.
               </p>
             </div>
 

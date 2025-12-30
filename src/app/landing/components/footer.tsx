@@ -116,7 +116,7 @@ export function LandingFooter() {
               </a>
             </div>
             <p className="text-muted-foreground mb-6 max-lg:text-center max-lg:flex max-lg:justify-center">
-              Accelerating web development with curated blocks, templates, landing pages, and admin dashboards designed for modern developers.
+              The all-in-one, CBSE-aligned school ERP designed to digitize academic and administrative operations. Simplify management, eliminate paperwork, and empower education with Byte School.
             </p>
             <div className="flex space-x-4 max-lg:justify-center">
               {socialLinks.map((social) => (
