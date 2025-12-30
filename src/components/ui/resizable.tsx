@@ -1,6 +1,5 @@
 import * as React from "react"
 import { GripVerticalIcon } from "lucide-react"
-import * as ResizablePrimitive from "react-resizable-panels"
 import { Group, Panel, Separator } from "react-resizable-panels"
 
 import { cn } from "@/lib/utils"
@@ -31,7 +30,7 @@ function ResizableHandle({
   withHandle,
   className,
   ...props
-}: React.ComponentProps<typeof ResizablePrimitive.Separator> & {
+}: React.ComponentProps<typeof Separator> & {
   withHandle?: boolean
 }) {
   return (
