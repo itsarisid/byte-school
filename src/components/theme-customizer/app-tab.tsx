@@ -131,29 +131,6 @@ export function AppTab() {
                     ))}
                 </div>
             </div>
-
-            {/* Language */}
-            <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                    <Globe className="h-4 w-4 text-muted-foreground" />
-                    <Label className="text-base font-semibold">Language</Label>
-                </div>
-                <div className="grid gap-2">
-                    <Select
-                        value={config.language}
-                        onValueChange={(value) => setConfig({ ...config, language: value })}
-                    >
-                        <SelectTrigger className="w-full max-w-sm">
-                            <SelectValue placeholder="Select language" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="en">English (US)</SelectItem>
-                            <SelectItem value="es" disabled>Spanish (Coming Soon)</SelectItem>
-                            <SelectItem value="fr" disabled>French (Coming Soon)</SelectItem>
-                        </SelectContent>
-                    </Select>
-                </div>
-            </div>
         </div>
     )
 }

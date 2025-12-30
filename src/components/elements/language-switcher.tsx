@@ -65,9 +65,10 @@ export function LanguageSwitcher() {
                         <DropdownMenuItem
                             key={lang.code}
                             onClick={() => changeLanguage(lang.code)}
+                            disabled={lang.code !== 'en'}
                             className="flex justify-between items-center cursor-pointer"
                         >
-                            <span>{lang.name}</span>
+                            <span>{lang.name} {lang.code !== 'en' && '(Coming Soon)'}</span>
                             {i18n.language === lang.code && (
                                 <span className="text-xs text-muted-foreground ml-2">✓</span>
                             )}
@@ -83,9 +84,10 @@ export function LanguageSwitcher() {
                         <DropdownMenuItem
                             key={lang.code}
                             onClick={() => changeLanguage(lang.code)}
+                            disabled={lang.code !== 'hi'}
                             className="flex justify-between items-center cursor-pointer"
                         >
-                            <span>{lang.name}</span>
+                            <span>{lang.name} {lang.code !== 'hi' && '(Coming Soon)'}</span>
                             {i18n.language === lang.code && (
                                 <span className="text-xs text-muted-foreground ml-2">✓</span>
                             )}
