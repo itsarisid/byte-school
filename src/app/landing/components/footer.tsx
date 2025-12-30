@@ -50,10 +50,10 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { name: 'Twitter', href: '#', icon: Twitter },
-  { name: 'GitHub', href: 'https://github.com/silicondeck/shadcn-dashboard-landing-template', icon: Github },
-  { name: 'LinkedIn', href: '#', icon: Linkedin },
-  { name: 'YouTube', href: '#', icon: Youtube },
+  { name: 'Twitter', href: 'https://x.com/itsarisid', icon: Twitter },
+  { name: 'GitHub', href: 'https://github.com/itsarisid/byte-school', icon: Github },
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/itsarisid', icon: Linkedin },
+  { name: 'YouTube', href: 'https://youtube.com/@itsarisid', icon: Youtube },
 ]
 
 export function LandingFooter() {
@@ -110,7 +110,7 @@ export function LandingFooter() {
           {/* Brand Column */}
           <div className="col-span-4 lg:col-span-2 max-w-2xl">
             <div className="flex items-center space-x-2 mb-4 max-lg:justify-center">
-              <a href="https://shadcnstore.com" target='_blank' className="flex items-center space-x-2 cursor-pointer">
+              <a href="https://byte-school-nine.vercel.app/landing" target='_blank' className="flex items-center space-x-2 cursor-pointer">
                 <Logo size={32} />
                 <span className="font-bold text-xl">Byte School</span>
               </a>

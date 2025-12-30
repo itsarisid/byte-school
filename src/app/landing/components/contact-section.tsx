@@ -75,7 +75,7 @@ export function ContactSection() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MessageCircle className="h-5 w-5 text-primary" />
-                  Discord Community
+                  Follow on X
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -83,8 +83,8 @@ export function ContactSection() {
                   Join our active community for quick help and discussions with other developers.
                 </p>
                 <Button variant="outline" size="sm" className="cursor-pointer" asChild>
-                  <a href="https://discord.com/invite/XEQhPc9a6p" target="_blank" rel="noopener noreferrer">
-                    Join Discord
+                  <a href="https://x.com/itsarisid" target="_blank" rel="noopener noreferrer">
+                    Follow on X
                   </a>
                 </Button>
               </CardContent>
@@ -102,7 +102,7 @@ export function ContactSection() {
                   Report bugs, request features, or contribute to our open source repository.
                 </p>
                 <Button variant="outline" size="sm" className="cursor-pointer" asChild>
-                  <a href="https://github.com/silicondeck/shadcn-dashboard-landing-template/issues" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/itsarisid/byte-school/issues" target="_blank" rel="noopener noreferrer">
                     View on GitHub
                   </a>
                 </Button>
@@ -121,7 +121,7 @@ export function ContactSection() {
                   Browse our comprehensive guides, tutorials, and component documentation.
                 </p>
                 <Button variant="outline" size="sm" className="cursor-pointer" asChild>
-                  <a href="#">
+                  <a href="https://github.com/itsarisid/byte-school/issues" target="_blank" rel="noopener noreferrer">
                     View Docs
                   </a>
                 </Button>
@@ -149,7 +149,7 @@ export function ContactSection() {
                           <FormItem>
                             <FormLabel>First name</FormLabel>
                             <FormControl>
-                              <Input placeholder="John" {...field} />
+                              <Input placeholder="Sajid" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -162,7 +162,7 @@ export function ContactSection() {
                           <FormItem>
                             <FormLabel>Last name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Doe" {...field} />
+                              <Input placeholder="Khan" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -176,7 +176,7 @@ export function ContactSection() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="john@example.com" {...field} />
+                            <Input type="email" placeholder="sajidkhan@example.com" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
