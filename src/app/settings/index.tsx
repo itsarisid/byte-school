@@ -13,6 +13,7 @@ import { ThemeTab } from '@/components/theme-customizer/theme-tab'
 import { LayoutTab } from '@/components/theme-customizer/layout-tab'
 import { AppTab } from '@/components/theme-customizer/app-tab'
 import { ImportModal } from '@/components/theme-customizer/import-modal'
+import { LanguageSwitcher } from '@/components/elements/language-switcher'
 import {
     selectedThemeAtom,
     selectedMyThemeAtom,
@@ -82,10 +83,13 @@ export default function SettingsPage() {
                                 Manage your theme, layout, and application settings.
                             </CardDescription>
                         </div>
-                        <Button variant="outline" size="sm" onClick={handleReset} className="cursor-pointer">
-                            <RotateCcw className="h-4 w-4 mr-2" />
-                            Reset Defaults
-                        </Button>
+                        <div className="flex items-center gap-2">
+                            <LanguageSwitcher />
+                            <Button variant="outline" size="sm" onClick={handleReset} className="cursor-pointer">
+                                <RotateCcw className="h-4 w-4 mr-2" />
+                                Reset Defaults
+                            </Button>
+                        </div>
                     </CardHeader>
                     <CardContent>
                         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
