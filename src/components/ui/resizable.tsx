@@ -30,7 +30,7 @@ function ResizableHandle({
   withHandle,
   className,
   ...props
-}: React.ComponentProps<typeof ResizablePrimitive.Separator> & {
+}: React.ComponentProps<typeof Separator> & {
   withHandle?: boolean
 }) {
   return (
