@@ -1,0 +1,29 @@
+name: Vercel Deployment Failed Issue
+on:
+  deployment_status:
+    types: [failure] # This triggers the action when a deployment fails
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    # Add a conditional check to ensure it only runs for Vercel deployments if needed
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Create GitHub Issue on Failure
+      if: github.event.deployment_status.state == 'failure'
+      uses: actions/create-an-issue@v2 # An example action for creating issues
+      with:
+        repo-token: ${{ secrets.GH_ISSUE_PAT }}
+        title: 'Vercel Deployment Failed: ${{ github.event.deployment_status.target_url }}'
+        body: |
+          A Vercel deployment failed to build. 
+
+          *   **Environment:** Production
+          *   **Commit:** ${{ github.event.deployment_status.sha }}
+          *   **View Details:** [Deployment Logs](${{ github.event.deployment_status.log_url }})
+
+          Please investigate the build logs to resolve the issue.
+        labels: bug, automated-issue
+        assignees: itsarisid
