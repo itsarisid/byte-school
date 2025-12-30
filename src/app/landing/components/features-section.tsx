@@ -1,15 +1,8 @@
 "use client"
 
 import {
-  BarChart3,
-  Zap,
   Users,
   ArrowRight,
-  Database,
-  Package,
-  Crown,
-  Layout,
-  Palette,
   Sparkles,
   BookOpen,
   CreditCard,

@@ -6,6 +6,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Search } from "lucide-react"
 import { CommandSearch, SearchTrigger } from "@/components/elements/command-search"
 import { ModeToggle } from "@/components/elements/mode-toggle"
+import { LanguageSwitcher } from "@/components/elements/language-switcher"
 import { DynamicBreadcrumbs } from "@/components/elements/dynamic-breadcrumbs"
 import { useSidebarConfig } from "@/hooks/use-sidebar-config"
 import { cn } from "@/lib/utils"
@@ -46,6 +47,7 @@ export function SiteHeader() {
             <div className="hidden sm:block">
               <SearchTrigger onClick={() => setSearchOpen(true)} />
             </div>
+            <LanguageSwitcher />
             <div className="sm:hidden">
               <button
                 onClick={() => setSearchOpen(true)}
