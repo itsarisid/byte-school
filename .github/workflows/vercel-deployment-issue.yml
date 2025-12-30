@@ -1,7 +1,6 @@
 name: Vercel Deployment Failed Issue
 on:
   deployment_status:
-    types: [failure] # This triggers the action when a deployment fails
 
 jobs:
   create_issue:
@@ -21,7 +20,7 @@ jobs:
           A Vercel deployment failed to build. 
 
           *   **Environment:** Production
-          *   **Commit:** ${{ github.event.deployment_status.sha }}
+          *   **Commit:** ${{ github.event.deployment.sha }}
           *   **View Details:** [Deployment Logs](${{ github.event.deployment_status.log_url }})
 
           Please investigate the build logs to resolve the issue.

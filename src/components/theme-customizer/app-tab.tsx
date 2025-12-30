@@ -1,7 +1,7 @@
 "use client"
 
 import { useAtom } from 'jotai'
-import { Check, Calendar, Clock, Type, Globe } from 'lucide-react'
+import { Check, Calendar, Clock, Type } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import { Label } from '@/components/ui/label'
 import {
