@@ -23,6 +23,8 @@ const Settings = lazy(() => import('@/app/settings'))
 const Profile = lazy(() => import('@/app/profile'))
 const TeachersList = lazy(() => import('@/app/teachers'))
 const TeacherDetails = lazy(() => import('@/app/teachers/[id]'))
+const StudentsList = lazy(() => import('@/app/students'))
+const StudentDetails = lazy(() => import('@/app/students/[id]'))
 
 
 
@@ -106,5 +108,13 @@ export const routes: RouteConfig[] = [
   {
     path: "/teachers/:id",
     element: <TeacherDetails />
+  },
+  {
+    path: "/students",
+    element: <StudentsList />
+  },
+  {
+    path: "/students/:id",
+    element: <StudentDetails />
   },
 ]
