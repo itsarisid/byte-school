@@ -14,14 +14,6 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 import { MoreHorizontal, FileText, Phone, MapPin, Award, Dumbbell, Music, Bot, User, Calendar as CalendarIcon } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
@@ -45,22 +37,6 @@ export default function StudentDetailsPage() {
     return (
         <BaseLayout title="Student Details" description="View detailed student profile and performance">
             <div className="flex flex-col gap-4 px-4 pb-8">
-                <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink href="/dashboard">Dashboard</BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbLink href="/students">Students</BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbPage>Student Details</BreadcrumbPage>
-                        </BreadcrumbItem>
-                    </BreadcrumbList>
-                </Breadcrumb>
-
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-4">
                     {/* Left Column (Profile & Personal) - Span 3 */}
                     <div className="md:col-span-3 space-y-6">

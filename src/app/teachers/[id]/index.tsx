@@ -7,14 +7,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Calendar } from "@/components/ui/calendar"
 import { Progress } from "@/components/ui/progress"
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator
-} from "@/components/ui/breadcrumb"
 import { MoreHorizontal, FileText, Phone, Mail, MapPin, Calendar as CalendarIcon } from "lucide-react"
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
@@ -53,23 +45,6 @@ export default function TeacherDetailsPage() {
     return (
         <BaseLayout title="Teacher Details" description="View and manage teacher information">
             <div className="flex flex-col gap-4 px-4 pb-8">
-                {/* Breadcrumb - Custom placement if needed, or rely on header */}
-                <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink href="/dashboard">Dashboard</BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbLink href="/teachers">Teachers</BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbPage>Teacher Details</BreadcrumbPage>
-                        </BreadcrumbItem>
-                    </BreadcrumbList>
-                </Breadcrumb>
-
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-4">
                     {/* Left Column (Profile & Info) - Span 3 */}
                     <div className="md:col-span-3 space-y-6">
