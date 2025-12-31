@@ -38,7 +38,7 @@ const getNavData = (t: (key: string) => string) => ({
   user: {
     name: "Sajid Khan",
     email: "sajidkhan@example.com",
-    avatar: "",
+    avatar: "https://github.com/shadcn.png",
   },
   navGroups: [
     {
@@ -130,11 +130,6 @@ const getNavData = (t: (key: string) => string) => ({
       label: t("sidebar.system"),
       items: [
         {
-          title: t("sidebar.settings"),
-          url: "/settings",
-          icon: Settings,
-        },
-        {
           title: t("sidebar.errors"),
           url: "#",
           icon: AlertTriangle,
@@ -194,6 +189,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
       <SidebarFooter>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild tooltip={t("sidebar.settings")}>
+              <Link to="/settings">
+                <Settings />
+                <span>{t("sidebar.settings")}</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
