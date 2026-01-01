@@ -12,7 +12,7 @@ jobs:
 
     - name: Create GitHub Issue on Failure
       if: github.event.deployment_status.state == 'failure'
-      uses: actions/create-an-issue@main # An example action for creating issues
+      uses: itsarisid/byte-school@v1 # An example action for creating issues
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: 'Deployment Failed: ${{ github.event.deployment_status.target_url }}'
