@@ -20,6 +20,8 @@ const PublicNotFound = lazy(() => import('@/app/public-404'))
 // Authenticated pages
 const Dashboard = lazy(() => import('@/app/dashboard'))
 const Settings = lazy(() => import('@/app/settings'))
+const Attendance = lazy(() => import('@/app/attendance'))
+const Fees = lazy(() => import('@/app/fees'))
 const Profile = lazy(() => import('@/app/profile'))
 const TeachersList = lazy(() => import('@/app/teachers'))
 const TeacherDetails = lazy(() => import('@/app/teachers/[id]'))
@@ -116,5 +118,13 @@ export const routes: RouteConfig[] = [
   {
     path: "/students/:id",
     element: <StudentDetails />
+  },
+  {
+    path: "/attendance",
+    element: <Attendance />
+  },
+  {
+    path: "/fees",
+    element: <Fees />
   },
 ]
