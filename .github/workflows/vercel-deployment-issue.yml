@@ -8,7 +8,7 @@ jobs:
     # Add a conditional check to ensure it only runs for Vercel deployments if needed
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@main
 
     - name: Create GitHub Issue on Failure
       if: github.event.deployment_status.state == 'failure'
