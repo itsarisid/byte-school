@@ -22,6 +22,7 @@ const Dashboard = lazy(() => import('@/app/dashboard'))
 const Settings = lazy(() => import('@/app/settings'))
 const Attendance = lazy(() => import('@/app/attendance'))
 const Fees = lazy(() => import('@/app/fees'))
+const Expenses = lazy(() => import('@/app/expenses'))
 const Exams = lazy(() => import('@/app/exams'))
 const Profile = lazy(() => import('@/app/profile'))
 const Parents = lazy(() => import('@/app/parents'))
@@ -151,5 +152,9 @@ export const routes: RouteConfig[] = [
   {
     path: "/staff/add",
     element: <StaffAdd />
+  },
+  {
+    path: "/expenses",
+    element: <Expenses />
   },
 ]
