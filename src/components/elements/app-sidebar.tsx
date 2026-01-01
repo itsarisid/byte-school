@@ -22,7 +22,6 @@ import { useTranslation } from "react-i18next"
 import { Logo } from "@/components/elements/logo"
 
 import { NavMain } from "@/components/elements/nav-main"
-import { NavUser } from "@/components/elements/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -35,11 +34,6 @@ import {
 
 // Helper to generate navigation data with translations
 const getNavData = (t: (key: string) => string) => ({
-  user: {
-    name: "Sajid Khan",
-    email: "sajidkhan@example.com",
-    avatar: "",
-  },
   navGroups: [
     {
       label: t("sidebar.general"),
@@ -130,11 +124,6 @@ const getNavData = (t: (key: string) => string) => ({
       label: t("sidebar.system"),
       items: [
         {
-          title: t("sidebar.settings"),
-          url: "/settings",
-          icon: Settings,
-        },
-        {
           title: t("sidebar.errors"),
           url: "#",
           icon: AlertTriangle,
@@ -194,7 +183,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild tooltip={t("sidebar.settings")}>
+              <Link to="/settings">
+                <Settings />
+                <span>{t("sidebar.settings")}</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarFooter>
     </Sidebar>
   )
