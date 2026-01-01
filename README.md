@@ -25,6 +25,7 @@ Our goal is to provide schools with a unified platform that manages the entire s
 - **Persistence**: Your layout and theme settings are saved to local storage via Jotai.
 - **Sticky Header**: Optional sticky header configuration for better navigation.
 - **Brand Colors**: Full control over specific brand color variables.
+- **Brand Logo**: Full control over specific brand logo.
 
 ### 📚 Institutional Management
 - **Student Information System**: Comprehensive profiles, academic records, and attendance tracking.
