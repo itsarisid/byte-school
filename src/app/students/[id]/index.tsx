@@ -142,7 +142,7 @@ export default function StudentDetailsPage() {
                             </CardHeader>
                             <CardContent className="p-4 flex flex-col items-center">
                                 <Calendar mode="single" selected={new Date()} className="w-full border-0 shadow-none" classNames={{
-                                    head_cell: "text-muted-foreground font-normal text-[0.8rem]",
+                                    head_cell: "w-9 text-muted-foreground font-normal text-[0.8rem]",
                                     cell: "text-center text-sm p-0 relative [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
                                     day: "h-9 w-9 p-0 font-normal aria-selected:opacity-100 hover:bg-accent rounded-full",
                                     day_selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",

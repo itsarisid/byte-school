@@ -7,6 +7,7 @@ import { Search } from "lucide-react"
 import { CommandSearch, SearchTrigger } from "@/components/elements/command-search"
 import { ModeToggle } from "@/components/elements/mode-toggle"
 import { LanguageSwitcher } from "@/components/elements/language-switcher"
+import { UserNav } from "@/components/elements/user-nav"
 import { DynamicBreadcrumbs } from "@/components/elements/dynamic-breadcrumbs"
 import { useSidebarConfig } from "@/hooks/use-sidebar-config"
 import { cn } from "@/lib/utils"
@@ -14,6 +15,12 @@ import { cn } from "@/lib/utils"
 export function SiteHeader() {
   const [searchOpen, setSearchOpen] = React.useState(false)
   const { config } = useSidebarConfig()
+
+  const user = {
+    name: "Sajid Khan",
+    email: "sajidkhan@example.com",
+    avatar: "https://github.com/shadcn.png",
+  }
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -58,6 +65,11 @@ export function SiteHeader() {
               </button>
             </div>
             <ModeToggle />
+            <Separator
+              orientation="vertical"
+              className="mx-1 data-[orientation=vertical]:h-4"
+            />
+            <UserNav user={user} />
           </div>
         </div>
       </header>

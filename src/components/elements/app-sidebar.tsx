@@ -22,7 +22,6 @@ import { useTranslation } from "react-i18next"
 import { Logo } from "@/components/elements/logo"
 
 import { NavMain } from "@/components/elements/nav-main"
-import { NavUser } from "@/components/elements/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -35,11 +34,6 @@ import {
 
 // Helper to generate navigation data with translations
 const getNavData = (t: (key: string) => string) => ({
-  user: {
-    name: "Sajid Khan",
-    email: "sajidkhan@example.com",
-    avatar: "https://github.com/shadcn.png",
-  },
   navGroups: [
     {
       label: t("sidebar.general"),
@@ -199,7 +193,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-        <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
   )
