@@ -22,11 +22,16 @@ const Dashboard = lazy(() => import('@/app/dashboard'))
 const Settings = lazy(() => import('@/app/settings'))
 const Attendance = lazy(() => import('@/app/attendance'))
 const Fees = lazy(() => import('@/app/fees'))
+const Exams = lazy(() => import('@/app/exams'))
 const Profile = lazy(() => import('@/app/profile'))
+const Parents = lazy(() => import('@/app/parents'))
 const TeachersList = lazy(() => import('@/app/teachers'))
 const TeacherDetails = lazy(() => import('@/app/teachers/[id]'))
+const TeacherAdd = lazy(() => import('@/app/teachers/add'))
 const StudentsList = lazy(() => import('@/app/students'))
 const StudentDetails = lazy(() => import('@/app/students/[id]'))
+const StudentAdd = lazy(() => import('@/app/students/add'))
+const StaffAdd = lazy(() => import('@/app/staff/add'))
 
 
 
@@ -108,6 +113,10 @@ export const routes: RouteConfig[] = [
     element: <TeachersList />
   },
   {
+    path: "/teachers/add",
+    element: <TeacherAdd />
+  },
+  {
     path: "/teachers/:id",
     element: <TeacherDetails />
   },
@@ -120,11 +129,27 @@ export const routes: RouteConfig[] = [
     element: <StudentDetails />
   },
   {
+    path: "/students/add",
+    element: <StudentAdd />
+  },
+  {
     path: "/attendance",
     element: <Attendance />
   },
   {
     path: "/fees",
     element: <Fees />
+  },
+  {
+    path: "/exams",
+    element: <Exams />
+  },
+  {
+    path: "/parents",
+    element: <Parents />
+  },
+  {
+    path: "/staff/add",
+    element: <StaffAdd />
   },
 ]

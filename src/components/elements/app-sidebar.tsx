@@ -16,6 +16,8 @@ import {
   MessageCircle,
   AlertTriangle,
   Settings,
+  User2,
+  Workflow,
 } from "lucide-react"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
@@ -52,11 +54,47 @@ const getNavData = (t: (key: string) => string) => ({
           title: t("sidebar.students"),
           url: "/students",
           icon: Users,
+          items: [
+            {
+              title: t("sidebar.add_student"),
+              url: "/students/add",
+            },
+            {
+              title: t("sidebar.view_student"),
+              url: "/students",
+            },
+          ],
+        },
+        {
+          title: t("sidebar.parents"),
+          url: "/parents",
+          icon: User2,
+        },
+        {
+          title: t("sidebar.staff"),
+          url: "/staff",
+          icon: Workflow,
+          items: [
+            {
+              title: t("sidebar.add_staff"),
+              url: "/staff/add",
+            },
+          ],
         },
         {
           title: t("sidebar.teachers"),
           url: "/teachers",
           icon: GraduationCap,
+          items: [
+            {
+              title: t("sidebar.add_teacher"),
+              url: "/teachers/add",
+            },
+            {
+              title: t("sidebar.view_teacher"),
+              url: "/teachers",
+            },
+          ],
         },
         {
           title: t("sidebar.classes"),
