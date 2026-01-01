@@ -14,8 +14,8 @@ jobs:
       if: github.event.deployment_status.state == 'failure'
       uses: actions/create-an-issue@v2 # An example action for creating issues
       with:
-        repo-token: ${{ secrets.GH_ISSUE_PAT }}
-        title: 'Vercel Deployment Failed: ${{ github.event.deployment_status.target_url }}'
+        token: ${{ secrets.GH_ISSUE_PAT }}
+        title: 'Deployment Failed: ${{ github.event.deployment_status.target_url }}'
         body: |
           A Vercel deployment failed to build. 
 
