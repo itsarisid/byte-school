@@ -25,9 +25,9 @@ const workloadData = [
 ]
 
 const chartConfig = {
-    total: { label: "Total Classes", color: "hsl(var(--chart-1))" },
-    teaching: { label: "Teaching Hours", color: "hsl(var(--chart-2))" },
-    duties: { label: "Extra Duties", color: "hsl(var(--chart-3))" },
+    total: { label: "Total Classes", color: "var(--chart-1)" },
+    teaching: { label: "Teaching Hours", color: "var(--chart-2)" },
+    duties: { label: "Extra Duties", color: "var(--chart-3)" },
 } satisfies ChartConfig
 
 const scheduleData = [

@@ -30,7 +30,7 @@ const academicHistory = [
 ]
 
 const chartConfig = {
-    score: { label: "Score", color: "hsl(var(--primary))" },
+    score: { label: "Score", color: "var(--primary)" },
 } satisfies ChartConfig
 
 export default function StudentDetailsPage() {
@@ -250,7 +250,7 @@ export default function StudentDetailsPage() {
                                                 <XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} fontSize={10} />
                                                 <YAxis tickLine={false} axisLine={false} tickMargin={8} fontSize={10} domain={[0, 100]} />
                                                 <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-                                                <Bar dataKey="score" fill="#f472b6" radius={[4, 4, 4, 4]} barSize={24} />
+                                                <Bar dataKey="score" fill="var(--color-score)" radius={[4, 4, 4, 4]} barSize={24} />
                                             </BarChart>
                                         </ChartContainer>
                                     </div>
